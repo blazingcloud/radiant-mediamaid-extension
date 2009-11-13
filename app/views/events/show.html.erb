@@ -1,0 +1,8 @@
+<% if @event.photo.exists? then %>
+<p>Small:<%= image_tag @event.photo.url(:small) %></p>
+<p>Medium:<%= image_tag @event.photo.url(:medium) %></p>
+<% else %>
+<p> There are no photo's attached, upload one. </p>
+<% end %>
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
