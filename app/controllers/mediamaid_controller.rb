@@ -4,7 +4,7 @@ class MediamaidController  < ApplicationController
   def index
     @medias = Media.all
 
-    respond_tdControllero do |format|
+    respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @medias }
     end

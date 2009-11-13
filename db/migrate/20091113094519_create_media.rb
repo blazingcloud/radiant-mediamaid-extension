@@ -1,12 +1,12 @@
 class CreateMedia < ActiveRecord::Migration
   def self.up
-    create_table :media do |t|
+    create_table :medias do |t|
 
       t.timestamps
     end
   end
 
   def self.down
-    drop_table :media
+    drop_table :medias
   end
 end
