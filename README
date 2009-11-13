@@ -1,3 +1,18 @@
-= Mediamaid
-
-Description goes here
+== Welcome to MediaMaid
+ 
+MediaMaid is an easy-to-use asset manager extension for Radiant CMS.
+ 
+ 
+== Getting Started
+ 
+ 
+[this will be procedure to install extension ]
+ 
+1) Install ImageMagick
+Mac OS X: http://www.imagemagick.org/script/binary-releases.php#macosx
+ 
+ 
+== Features
+ 
+- resizes images to thumbnails
+- access to gallery from single post admin pages
