@@ -3,8 +3,8 @@
 
 class MediamaidExtension < Radiant::Extension
   version "1.0"
-  description "Describe your extension here"
-  url "http://yourwebsite.com/mediamaid"
+  description "MediaMaid is an asset management tool for Radiant CMS"
+  url "http://blazing-cloud.com"
   
   define_routes do |map|
     map.namespace :admin, :member => { :remove => :get } do |admin|

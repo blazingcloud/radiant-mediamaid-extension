@@ -1,8 +1,6 @@
-  <h1>media maids</h1>
-
+<p>Add a media element:</p>
 <% form_for @mediamaid, :url  => { :action  => "create" }, :html  => { :multipart  => true } do |f| %>
 
-<%= f.label :mediamade_file_name%>
-<%= f.file_field :mediamaid %>
-<%= f.submit %>
+<p>Browse your computer: <%= f.file_field :mediamaid%></p>
+<%= f.submit name="Upload"%>
 <% end %>

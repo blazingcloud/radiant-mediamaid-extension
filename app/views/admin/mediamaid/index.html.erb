@@ -2,11 +2,17 @@
 
 <%= link_to 'add media', :action => "new" %>
 
-<table>
-<% @mediamaids.each do |mediamaid| %>
+<table cellpadding=5>
+<th>
+<td>Thumbnail</td><td>Content-Type</td><td>Remove</td></th>
+<% @mediamaids.each do |m| %>
 	<tr>
-		<td><%= link_to image_tag (mediamaid.mediamaid.url(:thumb)), :action => "show", :id  => mediamaid%> </td>
 		
+		<td><%= link_to image_tag (m.mediamaid.url(:thumb)), :action => "show", :id  => m%> </td>
+	  
+	    <td><%= link_to m.mediamaid_file_name, :action => "show", :id  => m %> </td>
+	<td><%= link_to m.mediamaid_content_type, :action => "show", :id  => m %> </td>
+    <td><%= link_to 'remove', :method => "delete", :id  => m %> </td>
 	</tr>
 <% end %>
 </table>

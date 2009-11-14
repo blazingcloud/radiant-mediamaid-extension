@@ -24,4 +24,16 @@ class Admin::MediamaidController  < ApplicationController
       format.xml  { render :xml => @mediamaid }
     end
   end
+  
+   def destroy
+    @mediamaid = Mediamaid.find(params[:id])
+    @mediamaid.destroy
+
+    respond_to do |format|
+      flash[:notice] = "Media object was removed from Gallery."
+      format.html { render :action => "index" }
+    end
+  end
+  
+  
 end
