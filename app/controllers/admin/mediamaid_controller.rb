@@ -9,5 +9,10 @@ class Admin::MediamaidController  < ApplicationController
     #   format.xml  { render :xml => @mediamaids }
     # end
   end
-
+  
+  # GET /Medias/new
+  # GET /Medias/new.xml
+  def new
+    @mediamaid = Mediamaid.new
+  end
 end
