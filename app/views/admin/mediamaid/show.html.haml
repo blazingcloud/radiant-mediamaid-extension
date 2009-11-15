@@ -1,0 +1,20 @@
+%h1 @mediamaid.mediamaid_file_name
+%blockquote= About
+
+%div=@mediamaid.mediamaid_file_name   
+@mediamaid.mediamaid_content_type
+@mediamaid.mediamaid_file_size 
+
+Small:
+%p=image_tag @mediamaid.mediamaid.url(:small) 
+
+Medium:
+%p=image_tag @mediamaid.mediamaid.url(:medium)
+
+Large:
+%p=image_tag @mediamaid.mediamaid.url(:large)
+
+Original Size:
+%p=image_tag @mediamaid.mediamaid.url(:original)
+
+		
