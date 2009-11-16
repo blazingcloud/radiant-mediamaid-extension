@@ -1,1 +1,6 @@
-%h1 MediaMaid 
+%h1 MediaMaid
+-@mediamaids = Mediamaid.find(:all)
+-@mediamaids.each do |m| 
+  %li== image_tag #{m.mediamaid.url(:thumb), :action => "show", :id  => m%}
+
+ 
