@@ -1,6 +1,8 @@
+<h2>MediaMaid</h2>
+<br />
 
 <%= link_to 'add media', :action => "new" %>
-
+<% @mediamaids = Mediamaid.find(:all) %>
 <table cellpadding=5>
 <th>
 <td>Thumbnail</td><td>Content-Type</td><td>Remove</td></th>
