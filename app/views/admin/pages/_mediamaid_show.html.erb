@@ -1,0 +1,13 @@
+<h1><%= @mediamaid.mediamaid_file_name %> Image Sizes</h1>
+<blockquote>
+About <%= @mediamaid.mediamaid_file_name %>:
+<%= @mediamaid.mediamaid_content_type %>, <%= @mediamaid.mediamaid_file_size %>
+</blockquote>
+<p>Small: <br /><%= image_tag @mediamaid.mediamaid.url(:small) %></p>
+<p>Medium:<br /><%= image_tag @mediamaid.mediamaid.url(:medium)%></p>
+<p>Large:<br /><%= image_tag @mediamaid.mediamaid.url(:large)%></p>
+
+<p>Original Size:<br />
+<%= image_tag @mediamaid.mediamaid.url(:original) %>
+</p>
+
