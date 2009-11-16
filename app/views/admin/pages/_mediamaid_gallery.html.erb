@@ -1,13 +1,23 @@
+<script type="text/javascript" src="/javascripts/admin/InsertTextIntoTextArea.js"></script>
+
+<%
+  beg_str = '<img src="'
+  end_str = '" />"'
+%>
+
 <h2>MediaMaid</h2>
 <br />
 
 <%= link_to 'add media',:controller=>"admin/mediamaid", :action=>"new" %>
-<% @mediamaids = Mediamaid.find(:all) %>
-<% @mediamaids.each do |m| %>
+<% @mediamaids = Mediamaid.find(:all) 
+   @mediamaids.each do |m| 
+		%>
 	<li><%= link_to image_tag (m.mediamaid.url(:thumb)), :action => "show", :id  => m%>
-		<% newString = '<p class="mediamaid" <img src="/' + @mediamaids.url + '/>'	%>
- Insert into post:	<a href="">small</a> <a href="">medium</a> <a href="">large</a> <a href="">original</a>
+    Insert into post:	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:small) %>')">small</a> <a href="">medium</a> <a href="">large</a> <a href="">original</a>
 
 <% end %>
 
-	
+
+
+
+<!-- <textarea id="messageBody"></textarea> <input type="button" value="Insert Smiley" onclick="insertAtCaret('messageBody',':)');" /> 	 -->

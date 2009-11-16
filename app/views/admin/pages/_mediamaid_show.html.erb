@@ -2,7 +2,7 @@
 <blockquote>
 About <%= @mediamaid.mediamaid_file_name %>:
 <%= @mediamaid.mediamaid_content_type %>, <%= @mediamaid.mediamaid_file_size %>
-</blockquote>
+
 <p>Small: <br /><%= image_tag @mediamaid.mediamaid.url(:small) %></p>
 <p>Medium:<br /><%= image_tag @mediamaid.mediamaid.url(:medium)%></p>
 <p>Large:<br /><%= image_tag @mediamaid.mediamaid.url(:large)%></p>
