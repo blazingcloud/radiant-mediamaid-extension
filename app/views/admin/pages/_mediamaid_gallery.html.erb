@@ -1,25 +1,32 @@
 <script type="text/javascript" src="/javascripts/admin/InsertTextIntoTextArea.js"></script>
-
-<%
-  beg_str = '<img src="'
-  end_str = '" />"'
-%>
-
 <h2>MediaMaid</h2>
 <br />
 
 <%= link_to 'add media',:controller=>"admin/mediamaid", :action=>"new" %>
 <% @mediamaids = Mediamaid.find(:all) 
-   @mediamaids.each do |m| 
-		%>
-	<li><%= link_to image_tag (m.mediamaid.url(:thumb)), :action => "show", :id  => m%>
-    Insert into post:	
-<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:small) %>')">small</a> 
-<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:medium) %>')">medium</a> 
-<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:large) %>')">large</a> 
-<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:original) %>')">original</a>
+	i = 1
+	row_limit = 4
+	%>
+	<table>
+		
+  <% @mediamaids.each do |m| 
 
+   if i % row_limit == 0 
+	puts "</tr><tr>"
+   end
+	%>
+       
+   <td>
+	<%= link_to image_tag (m.mediamaid.url(:thumb)), :action => "show", :id  => m%>
+    Insert into post:	
+	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:small) %>')">small</a> 
+	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:medium) %>')">medium</a> 
+	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:large) %>')">large</a> 
+	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:original) %>')">original</a>
+	</td>
+	<% i += 1 %>	
 <% end %>
+    </table>
 
 
 
