@@ -13,7 +13,11 @@
    @mediamaids.each do |m| 
 		%>
 	<li><%= link_to image_tag (m.mediamaid.url(:thumb)), :action => "show", :id  => m%>
-    Insert into post:	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:small) %>')">small</a> <a href="">medium</a> <a href="">large</a> <a href="">original</a>
+    Insert into post:	
+<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:small) %>')">small</a> 
+<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:medium) %>')">medium</a> 
+<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:large) %>')">large</a> 
+<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:original) %>')">original</a>
 
 <% end %>
 
