@@ -25,7 +25,14 @@ class Admin::MediamaidController  < ApplicationController
     end
   end
   
-   def destroy
+     def createQuick
+        @mediamaid = Mediamaid.create( params[:mediamaid] )
+        respond_to do |format|
+           flash[:notice] = 'File was successfully loaded!'
+        end
+    end
+  
+    def destroy
     @mediamaid = Mediamaid.find(params[:id])
     @mediamaid.destroy
 
