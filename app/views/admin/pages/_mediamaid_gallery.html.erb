@@ -1,14 +1,13 @@
 <script type="text/javascript" src="/javascripts/admin/InsertTextIntoTextArea.js"></script>
-
-<% 
-@mediamaid = Mediamaid.new
-form_for @mediamaid, :url  => { :controller => "mediamaid", :action  => "create" }, :html  => { :multipart  => true } do |f| %>
-     <p>Upload Media: <%= f.file_field :mediamaid%>&nbsp;<%= f.submit name="Upload"%></p>
-<% end %>
+<p class="title"><label for="mediamaid_gallery"> Insert Media </label>      
+</p>
 <div id="mediamaid_gallery"	style="display:none;">
+<p>
+<%= link_to 'Add Media',:controller=>"admin/mediamaid", :action=>"new" %>
+</p>
 <% @mediamaids = Mediamaid.find(:all) 
 	i = 1
-	row_limit = 5
+	row_limit = 7
 	%>
 	<table>
 		<tr>
@@ -23,7 +22,16 @@ form_for @mediamaid, :url  => { :controller => "mediamaid", :action  => "create"
 	%>
        
    <td>
-	<%= link_to image_tag (m.mediamaid.url(:thumb)), :action => "show", :id  => m%>
+    <% 
+    if (m.mediamaid.url(:thumb))
+	  # uncomment to link to show media page
+	  #link_to image_tag (m.mediamaid.url(:thumb)), :action => "show", :id  => m 
+	  # or, leave default to insert at original size
+	  %><a href="#" onClick="insertAtCaret('part_body_content','<%=m.mediamaid.url(:original) %>')"><img src="<%=m.mediamaid.url(:thumb)%>" alt="<%=m.mediamaid_file_name %>" /></a><%
+	else
+	  link_to m.mediamaid_file_name, :action=> "show", :id => m
+	end
+	%>
 	<br />
     Insert 
 	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:small) %>')">S</a> 
