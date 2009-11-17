@@ -1,4 +1,6 @@
 class Admin::MediamaidController  < ApplicationController
+  layout "standard", :except => [:create ]
+  
   def index
     @mediamaids = Mediamaid.all 
   end 
@@ -9,11 +11,16 @@ class Admin::MediamaidController  < ApplicationController
 
    def create 
     @mediamaid = Mediamaid.create( params[:mediamaid] )
-    respond_to do |format|
-       flash[:notice] = 'File was successfully loaded!'
-   
-       format.html { render :action => "show" }
+    render :layout => false
+    if (request.xhr?)
+      flash[:notice] = 'Was an Ajax call.'
+    else
+      flash[:notice] = 'Was not an Ajax call.'
     end
+   # respond_to do |format|
+  #   flash[:notice] = 'File was successfully loaded!'   
+   #  format.html { render :action => "show" }
+   # end
   end
   
   
