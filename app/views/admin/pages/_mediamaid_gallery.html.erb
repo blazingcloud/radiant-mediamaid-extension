@@ -5,30 +5,31 @@
 <%= link_to 'add media',:controller=>"admin/mediamaid", :action=>"new" %>
 <% @mediamaids = Mediamaid.find(:all) 
 	i = 1
-	row_limit = 4
+	row_limit = 5
 	%>
-	<table>
-		
+	<table cellpadding="5px" margin="3px">
+		<tr>
   <% @mediamaids.each do |m| 
-
-   if i % row_limit == 0 
-	puts "</tr><tr>"
-   end
+	puts i
+   if row_limit == i 
+	%> </tr><tr> <%
+	i = 1
+	else
+	i += 1	
+   	end
 	%>
        
    <td>
 	<%= link_to image_tag (m.mediamaid.url(:thumb)), :action => "show", :id  => m%>
-    Insert into post:	
-	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:small) %>')">small</a> 
-	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:medium) %>')">medium</a> 
-	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:large) %>')">large</a> 
-	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:original) %>')">original</a>
+	<br />
+    Insert 
+	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:small) %>')">S</a> 
+	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:medium) %>')">M</a> 
+	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:large) %>')">L</a> 
+	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:original) %>')">O</a>
 	</td>
-	<% i += 1 %>	
+
 <% end %>
+		</tr>
     </table>
 
-
-
-
-<!-- <textarea id="messageBody"></textarea> <input type="button" value="Insert Smiley" onclick="insertAtCaret('messageBody',':)');" /> 	 -->
