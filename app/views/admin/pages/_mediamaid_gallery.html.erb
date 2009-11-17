@@ -1,6 +1,13 @@
 <script type="text/javascript" src="/javascripts/admin/InsertTextIntoTextArea.js"></script>
 <p class="title"><label for="mediamaid_gallery"> Insert Media </label>      
 </p>
+<div>
+<% 
+@mediamaid = Mediamaid.new
+form_for @mediamaid, :url  => { :controller => "mediamaid", :action  => "create" }, :html  => { :multipart  => true } do |f| %>
+     Upload Media: <%= f.file_field :mediamaid%>&nbsp;<%= f.submit name="Upload"%>
+<% end %>
+</div>
 <div id="mediamaid_gallery"	style="display:none;">
 <p>
 <%= link_to 'Add Media',:controller=>"admin/mediamaid", :action=>"new" %>
