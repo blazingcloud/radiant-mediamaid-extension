@@ -11,6 +11,7 @@ class Admin::MediamaidController  < ApplicationController
     @mediamaid = Mediamaid.create( params[:mediamaid] )
     respond_to do |format|
        flash[:notice] = 'File was successfully loaded!'
+   
        format.html { render :action => "show" }
     end
   end
@@ -25,19 +26,17 @@ class Admin::MediamaidController  < ApplicationController
     end
   end
   
-     def createQuick
-        @mediamaid = Mediamaid.create( params[:mediamaid] )
-        respond_to do |format|
-           flash[:notice] = 'File was successfully loaded!'
-        end
-    end
+  def me
+    flash[:notice] = "Hi!"
+  end
+
   
     def destroy
     @mediamaid = Mediamaid.find(params[:id])
     @mediamaid.destroy
 
     respond_to do |format|
-      flash[:notice] = "Media object was removed from Gallery."
+      flash[:notice] = "Media was removed from Gallery."
       format.html { render :action => "index" }
     end
   end
