@@ -18,5 +18,21 @@ class MediamaidExtension < Radiant::Extension
     admin.tabs.add "Media Maid", "/admin/mediamaid", :after => "Layouts", :visibility => [:all]
 #     tab("Design").add_item "Media Maid", "/admin/mediamaid", :after => "Stylesheets"
 
+
+    #load extra admin stylesheet
+
+    Admin::PagesController.class_eval do
+
+      before_filter :set_custom_css
+      before_filter :include_javascript
+
+      def set_custom_css
+        @stylesheets << 'admin/mediamaid'
+      end
+      
+      def include_javascript
+        @javascripts << "admin/InsertTextIntoTextArea.js"
+      end
+    end
   end
 end
