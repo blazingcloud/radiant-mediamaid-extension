@@ -2,12 +2,12 @@
 
 <% @mediamaid = Mediamaid.new %>
 <div id="mediamaid_upload">
-<% form_for @mediamaid, :url  => { :controller => "mediamaid", :action  => "create" }, :html  => { :multipart  => true } do |f| %>
+<% remote_form_for @mediamaid, :url  => { :controller => "mediamaid", :action  => "create" }, :html  => { :multipart  => true } do |f| %>
     <label for = "Upload Media" style="text-shadow: 1px 1px 1px #222;">Upload Media:</label> <%= f.file_field :mediamaid%>&nbsp;<%= f.submit name="Upload"%>
 <% end %>
-<hr>
-<%= link_to "Say Hi", :controller => "mediamaid", :method => "me" %>
-<hr>
+
+
+
 </div>
 <div id="mediamaid_gallery"	style="display:none;">
 
