@@ -13,7 +13,7 @@ class MediamaidExtension < Radiant::Extension
   end
   
   def activate
-    admin.page.edit.add(:form_top, "mediamaid_gallery", :after => 'edit_extended_metadata')
+    admin.page.edit.add(:main, "mediamaid_gallery", :before => "edit_header")
     # admin.nav[:content] << admin.nav_item(:mediamaid, "Mediamaid", "/admin/mediamaid"), :after => :pages
     admin.tabs.add "Media Maid", "/admin/mediamaid", :after => "Layouts", :visibility => [:all]
 #     tab("Design").add_item "Media Maid", "/admin/mediamaid", :after => "Stylesheets"
