@@ -1,16 +1,19 @@
 <script type="text/javascript" src="/javascripts/admin/InsertTextIntoTextArea.js"></script>
-<h2>MediaMaid</h2>
-<br />
 
-<%= link_to 'add media',:controller=>"admin/mediamaid", :action=>"new" %>
+<% 
+@mediamaid = Mediamaid.new
+form_for @mediamaid, :url  => { :controller => "mediamaid", :action  => "create" }, :html  => { :multipart  => true } do |f| %>
+     <p>Upload Media: <%= f.file_field :mediamaid%>&nbsp;<%= f.submit name="Upload"%></p>
+<% end %>
+<div id="mediamaid_gallery"	style="display:none;">
 <% @mediamaids = Mediamaid.find(:all) 
 	i = 1
 	row_limit = 5
 	%>
-	<table cellpadding="5px" margin="3px">
+	<table>
 		<tr>
   <% @mediamaids.each do |m| 
-	puts i
+	
    if row_limit == i 
 	%> </tr><tr> <%
 	i = 1
@@ -28,8 +31,11 @@
 	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:large) %>')">L</a> 
 	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:original) %>')">O</a>
 	</td>
-
 <% end %>
 		</tr>
     </table>
-
+</div>
+<p class="more_or_less">
+<a id="more_mediamaid_gallery" href="javascript: $('mediamaid_gallery').show(); $('less_mediamaid_gallery').show(); $('more_mediamaid_gallery').hide(); this.stop()" style="background: #7e7e7e url(/images/admin/metadata_toggle.png) no-repeat 90% 8px;" >More</a>
+<a id="less_mediamaid_gallery" style="display:none;background: #7e7e7e url(/images/admin/metadata_toggle.png) no-repeat 85% -22px;" href="javascript: $('mediamaid_gallery').hide(); $('more_mediamaid_gallery').show(); $('less_mediamaid_gallery').hide(); this.stop()">More</a>
+</p>
