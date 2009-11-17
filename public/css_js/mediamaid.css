@@ -23,6 +23,20 @@
     background: #7e7e7e url(/images/admin/metadata_toggle.png) no-repeat 90% 8px; }
 #content p.more_or_less #mediamaid_gallery {
     background: #7e7e7e url(/images/admin/metadata_toggle.png) no-repeat 85% -22px; }
-.mediamaid_partial{
-	margin:0 0 2em 0em;
+#mediamaid_partial{
+	margin:0 0 3em 0em;
+}
+#mediamaid_upload{
+	border:1px solid #7e7e7e;
+	padding:8px 0 8px 8px;
+}
+#mediamaid_gallery{
+	padding:8px 0 8px 8px;
+	background:#7e7e7e;
+}
+.mediamaid_files  {
+	padding:5px; 
+}
+.mediamaid_size_choice{
+	color:#fff;
 }
