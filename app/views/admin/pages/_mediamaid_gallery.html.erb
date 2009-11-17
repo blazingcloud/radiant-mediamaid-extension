@@ -1,12 +1,12 @@
-<div class="mediamaid_partial">
+<div id="mediamaid_partial">
 
 <% @mediamaid = Mediamaid.new %>
-<div style="border:1px solid #7e7e7e; padding:8px 0 8px 8px;">
+<div id="mediamaid_upload">
 <% form_for @mediamaid, :url  => { :controller => "mediamaid", :action  => "create" }, :html  => { :multipart  => true } do |f| %>
     <label for = "Upload Media" style="text-shadow: 1px 1px 1px #222;">Upload Media:</label> <%= f.file_field :mediamaid%>&nbsp;<%= f.submit name="Upload"%>
 <% end %>
 </div>
-<div id="mediamaid_gallery"	style="display:none; solid #7e7e7e; padding:8px 0 8px 8px;">
+<div id="mediamaid_gallery"	style="display:none;">
 
 <% @mediamaids = Mediamaid.find(:all) 
 	i = 1
@@ -24,7 +24,7 @@
    	end
 	%>
        
-   <td>
+   <td class="mediamaid_files">
     <% 
     if (m.mediamaid.url(:thumb))
 	  # uncomment to link to show media page
@@ -37,17 +37,17 @@
 	%>
 	<br />
     Insert 
-	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:small) %>')">S</a> 
-	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:medium) %>')">M</a> 
-	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:large) %>')">L</a> 
-	<a href="#" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:original) %>')">O</a>
+	<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:small) %>')">S</a> 
+	<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:medium) %>')">M</a> 
+	<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:large) %>')">L</a> 
+	<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:original) %>')">O</a>
 	</td>
 <% end %>
 		</tr>
     </table>
 </div>
 <p class="more_or_less" padding:4px 0 5px;>
-<a id="more_mediamaid_gallery" href="javascript: $('mediamaid_gallery').show(); $('less_mediamaid_gallery').show(); $('more_mediamaid_gallery').hide(); this.stop()" >More</a>
-<a id="less_mediamaid_gallery" style="display:none;" href="javascript: $('mediamaid_gallery').hide(); $('more_mediamaid_gallery').show(); $('less_mediamaid_gallery').hide(); this.stop()">More</a>
+<a id="more_mediamaid_gallery" href="javascript: $('mediamaid_gallery').show(); $('less_mediamaid_gallery').show(); $('more_mediamaid_gallery').hide(); this.stop()" style="background: #7e7e7e url(/images/admin/metadata_toggle.png) no-repeat 90% 8px;" >More</a>
+<a id="less_mediamaid_gallery" style="display:none; background: #7e7e7e url(/images/admin/metadata_toggle.png) no-repeat 85% -22px;" href="javascript: $('mediamaid_gallery').hide(); $('more_mediamaid_gallery').show(); $('less_mediamaid_gallery').hide(); this.stop()">Hide</a>
 </p>
 </div>
