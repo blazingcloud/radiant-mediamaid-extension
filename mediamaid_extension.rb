@@ -31,7 +31,7 @@ class MediamaidExtension < Radiant::Extension
       end
       
       def include_javascript
-        @javascripts << "admin/InsertTextIntoTextArea.js"
+        @javascripts << "admin/insert_text_into_textarea.js"
       end
     end
   end
