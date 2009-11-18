@@ -1,15 +1,8 @@
 <div id="mediamaid_partial">
 <script src="/javascripts/admin/insert_text_into_textarea.js" type="text/javascript" ></script>
-
 <% @mediamaid = Mediamaid.new %>
 <div id="mediamaid_upload">
-
-	<%  form_for @mediamaid, :url=> { :controller => "mediamaid", :action=>"create"}, :html => { :multipart => true } do |f| %>
-	<label for = "Upload Media" style="text-shadow: 1px 1px 1px #222;">Upload Media:</label><input type="file" name="mediamaid[mediamaid]" />
-	<%= f.submit name="Upload"%>
-	<% end %>
-	<iframe id="upload_frame" name="upload_frame" style="width:0px;height:0px;"></iframe>
-
+<h2>Media Gallery</h2>
 </div>
 <div id="mediamaid_gallery"	style="display:none;">
 
