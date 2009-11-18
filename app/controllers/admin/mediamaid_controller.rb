@@ -1,5 +1,4 @@
 class Admin::MediamaidController  < ApplicationController
-  layout "standard", :except => [:create ]
   
   def index
     @mediamaids = Mediamaid.all 
@@ -9,6 +8,7 @@ class Admin::MediamaidController  < ApplicationController
     @mediamaid = Mediamaid.new
   end
 
+<<<<<<< HEAD
    # def create 
    #  @mediamaid = Mediamaid.create( params[:mediamaid] )
    #  render :layout => false
@@ -55,6 +55,15 @@ class Admin::MediamaidController  < ApplicationController
    
    
  
+=======
+   def create 
+    @mediamaid = Mediamaid.create( params[:mediamaid] )
+    respond_to do |format|
+       flash[:notice] = 'File was successfully loaded!'   
+       format.html { render :action => "show" }
+     end
+  end
+>>>>>>> 57ea9dca85215e44b685d7731c5564dc456a2a1c
   
   
   def show

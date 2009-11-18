@@ -1,66 +1,54 @@
 <div id="mediamaid_partial">
-
+ 
+ 
 <% @mediamaid = Mediamaid.new %>
 <div id="mediamaid_upload">
-<% form_for(:mediamaid, :url =>{ :controller => 'admin/mediamaid', :action=>'create', :format => 'js'}, :html => { :multipart => true, :target => 'upload_frame'}) do |f| %>
-    <label for = "Upload Media" style="text-shadow: 1px 1px 1px #222;">Upload Media:</label> <%= f.file_field :mediamaid%>&nbsp;<%= f.submit name="Upload"%>
+ 
+<% form_for @mediamaid, :url=> { :controller => "mediamaid", :action=>"create"}, :html => { :multipart => true } do |f| %>
+<label for = "Upload Media" style="text-shadow: 1px 1px 1px #222;">Upload Media:</label><input type="file" name="mediamaid[mediamaid]" />
+<%= f.submit name="Upload"%>
 <% end %>
+<iframe id="upload_frame" name="upload_frame" style="width:0px;height:0px;"></iframe>
+ 
 </div>
-<iframe id='upload_frame' name="upload_frame" style="width:1px;height:1px;border:0px" src="about:blank"></iframe>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="mediamaid_gallery"	style="display:none;">
-
-<% @mediamaids = Mediamaid.find(:all) 
-	i = 1
-	row_limit = 7
-	%>
-	<table>
-		<tr>
-  <% @mediamaids.each do |m| 
-	
-   if row_limit == i 
-	%> </tr><tr> <%
-	i = 1
-	else
-	i += 1	
-   	end
-	%>
+<div id="mediamaid_gallery" style="display:none;">
+ 
+<% @mediamaids = Mediamaid.find(:all)
+i = 1
+row_limit = 7
+%>
+<table>
+<tr>
+  <% @mediamaids.each do |m|
+ 
+   if row_limit == i
+%> </tr><tr> <%
+i = 1
+else
+i += 1
+    end
+%>
        
    <td class="mediamaid_files">
-    <% 
+    <%
     if (m.mediamaid.url(:thumb))
-	  # uncomment to link to show media page
-	  #link_to image_tag (m.mediamaid.url(:thumb)), :action => "show", :id  => m 
-	  # or, leave default to insert at original size
-	  %><a href="#" onClick="insertAtCaret('part_body_content','<%=m.mediamaid.url(:original) %>')"><img src="<%=m.mediamaid.url(:thumb)%>" alt="<%=m.mediamaid_file_name %>" /></a><%
-	else
-	  link_to m.mediamaid_file_name, :action=> "show", :id => m
-	end
-	%>
-	<br />
-    Insert 
-	<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:small) %>')">S</a> 
-	<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:medium) %>')">M</a> 
-	<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:large) %>')">L</a> 
-	<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('part_body_content','<%=  m.mediamaid.url(:original) %>')">O</a>
-	</td>
+# uncomment to link to show media page
+#link_to image_tag (m.mediamaid.url(:thumb)), :action => "show", :id => m
+# or, leave default to insert at original size
+%><a href="#" onClick="insertAtCaret('part_body_content','<%=m.mediamaid.url(:original) %>')"><img src="<%=m.mediamaid.url(:thumb)%>" alt="<%=m.mediamaid_file_name %>" /></a><%
+else
+link_to m.mediamaid_file_name, :action=> "show", :id => m
+end
+%>
+<br />
+    Insert
+<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('part_body_content','<%= m.mediamaid.url(:small) %>')">S</a>
+<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('part_body_content','<%= m.mediamaid.url(:medium) %>')">M</a>
+<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('part_body_content','<%= m.mediamaid.url(:large) %>')">L</a>
+<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('part_body_content','<%= m.mediamaid.url(:original) %>')">O</a>
+</td>
 <% end %>
-		</tr>
+</tr>
     </table>
 </div>
 <p class="more_or_less" padding:4px 0 5px;>
