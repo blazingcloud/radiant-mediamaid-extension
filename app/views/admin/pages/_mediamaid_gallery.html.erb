@@ -2,13 +2,27 @@
 
 <% @mediamaid = Mediamaid.new %>
 <div id="mediamaid_upload">
-<% remote_form_for @mediamaid, :url  => { :controller => "mediamaid", :action  => "create" }, :html  => { :multipart  => true } do |f| %>
+<% form_for(:mediamaid, :url =>{ :controller => 'admin/mediamaid', :action=>'create', :format => 'js'}, :html => { :multipart => true, :target => 'upload_frame'}) do |f| %>
     <label for = "Upload Media" style="text-shadow: 1px 1px 1px #222;">Upload Media:</label> <%= f.file_field :mediamaid%>&nbsp;<%= f.submit name="Upload"%>
 <% end %>
-
-
-
 </div>
+<iframe id='upload_frame' name="upload_frame" style="width:1px;height:1px;border:0px" src="about:blank"></iframe>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div id="mediamaid_gallery"	style="display:none;">
 
 <% @mediamaids = Mediamaid.find(:all) 

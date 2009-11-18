@@ -1,0 +1,6 @@
+<li id="mediamaid_<%= list_item.id %>">
+	<% if list_item %>
+	<%= image_tag(list_item.mediamaid.url(:thumb)) %><br />
+	<% end %>
+	<%= link_to(list_item.mediamaid_file_name, list_item.mediamaid_path(list_item))%> (<%= link_to_remote("Delete", :controller=>"admin/mediamaids", :action=>"destroy", :method => :delete, :confirm => "are you sure?") %>)
+</li>
