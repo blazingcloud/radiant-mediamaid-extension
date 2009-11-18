@@ -9,22 +9,15 @@
 <div id="mediamaid_gallery" style="display:none;">
  
 <% @mediamaids = Mediamaid.find(:all)
-i = 1
-row_limit = 7
+
 %>
 <table>
-<tr>
-  <% @mediamaids.each do |m|
+
+  <% @mediamaids.each do |m|%>
  
-   if row_limit == i
-%> </tr><tr> <%
-i = 1
-else
-i += 1
-    end
-%>
+
        
-   <td class="mediamaid_files">
+   <div class="mediamaid_files">
     <%
     if (m.mediamaid.url(:thumb))
 # uncomment to link to show media page
@@ -41,9 +34,9 @@ end
 <a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('part_body_content','<%= m.mediamaid.url(:medium) %>')">M</a>
 <a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('part_body_content','<%= m.mediamaid.url(:large) %>')">L</a>
 <a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('part_body_content','<%= m.mediamaid.url(:original) %>')">O</a>
-</td>
+</div>
 <% end %>
-</tr>
+
     </table>
 </div>
 <p class="more_or_less" padding:4px 0 5px;>
