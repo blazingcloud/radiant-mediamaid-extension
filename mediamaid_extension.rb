@@ -24,15 +24,17 @@ class MediamaidExtension < Radiant::Extension
     Admin::PagesController.class_eval do
 
       before_filter :set_custom_css
-      before_filter :include_javascript
+    #  before_filter :include_javascript
 
       def set_custom_css
         @stylesheets << 'admin/mediamaid'
       end
       
-      def include_javascript
-        @javascripts << "admin/insert_text_into_text_area.js"
-      end
+
+      #def include_javascript
+      #  @javascripts << "admin/insert_text_into_textarea.js"
+      #end
+
     end
   end
 end
