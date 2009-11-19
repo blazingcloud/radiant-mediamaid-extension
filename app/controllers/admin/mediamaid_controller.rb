@@ -2,6 +2,8 @@ class Admin::MediamaidController  < ApplicationController
   
   def index
     @mediamaids = Mediamaid.all 
+    
+    @mediamaid = Mediamaid.new
   end 
 
   def new

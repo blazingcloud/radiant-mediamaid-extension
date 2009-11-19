@@ -1,5 +1,10 @@
 
-<%= link_to 'add media', :action => "new" %>
+<p>Add a media element:</p>
+<% form_for @mediamaid, :url  => { :action  => "create" }, :html  => { :multipart  => true } do |f| %>
+
+<p>Browse your computer: <%= f.file_field :mediamaid%></p>
+<%= f.submit name="Upload"%>
+<% end %>
 
 <table cellpadding=5>
 <th>
