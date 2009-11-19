@@ -33,9 +33,13 @@
 #mediamaid_gallery{
 	padding:8px 0 8px 8px;
 	background:#7e7e7e;
-}
+	width:auto;
+	height:300px;
+	overflow-y:scroll;
+	overflow-x:hidden;}
 .mediamaid_files  {
 	padding:5px; 
+	float:left;
 }
 .mediamaid_size_choice{
 	color:#fff;
