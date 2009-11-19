@@ -1,7 +1,6 @@
 <div id="mediamaid_partial">
 
 <script src="/javascripts/admin/insert_text_into_textarea.js" type="text/javascript" ></script>
-<% @mediamaid = Mediamaid.new %>
 <div id="mediamaid_upload">
 
 <h2>Media Gallery</h2>
@@ -14,9 +13,6 @@
 <table>
 
   <% @mediamaids.each do |m|%>
- 
-
-       
    <div class="mediamaid_files">
     <%
     if (m.mediamaid.url(:thumb))
