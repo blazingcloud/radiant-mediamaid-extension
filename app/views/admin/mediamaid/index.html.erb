@@ -16,7 +16,7 @@
 	  
 	    <td><%= link_to m.mediamaid_file_name, :action => "show", :id  => m %> </td>
 	<td><%= link_to m.mediamaid_content_type, :action => "show", :id  => m %> </td>
-    <td><%= link_to 'remove', :method => "destroy", :id  => m %> </td>
+    <td><%= link_to 'remove', admin_mediamaid_url(m), :method => "delete", :id  => m %> </td>
 	</tr>
 <% end %>
 </table>
