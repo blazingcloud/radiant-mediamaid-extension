@@ -20,6 +20,7 @@ class MediamaidExtension < Radiant::Extension
 
 
     #load extra admin stylesheet
+     
 
     Admin::PagesController.class_eval do
 

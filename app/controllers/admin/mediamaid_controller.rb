@@ -1,8 +1,8 @@
 class Admin::MediamaidController  < ApplicationController
   
   def index
-    @mediamaids = Mediamaid.all 
-    
+    @mediamaids = Mediamaid.all(:order=>"created_at DESC")
+#      @movies = Movie.all(:order => " year DESC ")
     @mediamaid = Mediamaid.new
   end 
 
