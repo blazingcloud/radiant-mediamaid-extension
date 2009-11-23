@@ -19,17 +19,17 @@
 # uncomment to link to show media page
 #link_to image_tag (m.mediamaid.url(:thumb)), :action => "show", :id => m
 # or, leave default to insert at original size
-%><a href="#" onClick="insertAtCaret('part_body_content','<%=m.mediamaid.url(:original) %>')"><img src="<%=m.mediamaid.url(:small)%>" alt="<%=m.mediamaid_file_name %>" height="100px" /></a><%
+%><a href="#" onClick="insertAtCaret('<%=m.mediamaid.url(:original) %>')"><img src="<%=m.mediamaid.url(:small)%>" alt="<%=m.mediamaid_file_name %>" height="100px" /></a><%
 else
 link_to m.mediamaid_file_name, :action=> "show", :id => m
 end
 %>
 <br />
     Insert
-<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('part_body_content','<%= m.mediamaid.url(:small) %>')">S</a>
-<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('part_body_content','<%= m.mediamaid.url(:medium) %>')">M</a>
-<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('part_body_content','<%= m.mediamaid.url(:large) %>')">L</a>
-<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('part_body_content','<%= m.mediamaid.url(:original) %>')">O</a>
+<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('<%= m.mediamaid.url(:small) %>')">S</a>
+<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('<%= m.mediamaid.url(:medium) %>')">M</a>
+<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('<%= m.mediamaid.url(:large) %>')">L</a>
+<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('<%= m.mediamaid.url(:original) %>')">O</a>
 </div>
 <% end %>
 

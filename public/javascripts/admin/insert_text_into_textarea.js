@@ -1,6 +1,9 @@
-function insertAtCaret(areaId,text) { 
-	var txtarea = document.getElementById(areaId); 
-	text = '<p class="mediamaid"><img src="' + text + '" /></p>';
+function insertAtCaret(text) { 
+	alert this.pageId();
+	var txtarea = document.getElementById(part__content);
+	if (txtarea is inFocus()) {
+		text = '<p class="mediamaid"><img src="' + text + '" /></p>';
+    }
 	var scrollPos = txtarea.scrollTop; 
 	var strPos = 0; 
 	var br = ((txtarea.selectionStart || txtarea.selectionStart == '0') ? "ff" : (document.selection ? "ie" : false ) ); 
