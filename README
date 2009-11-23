@@ -8,9 +8,22 @@ MediaMaid is an easy-to-use asset manager extension for Radiant CMS.
  
 [this will be procedure to install extension ]
  
-1) Install ImageMagick
-Mac OS X: http://www.imagemagick.org/script/binary-releases.php#macosx
- 
+1. Install ImageMagick. "Mac OS X":http://www.imagemagick.org/script/binary-releases.php#macosx
+
+
+2. If you don't already have it, you'll need the paperclip gem
+
+<pre><code>gem install paperclip</code></pre>
+
+3. In your Radiant root directory, clone the code from github:
+
+<pre><code>git clone git@github.com:blazingcloud/radiant-media-maid.git vendor/extensions/mediamaid</code></pre>
+
+4. Run Radiant extension command-line functions:
+<pre><code>rake radiant:extensions:mediamaid:migrate
+rake radiant:extensions:mediamaid:update</code></pre>
+
+5. Restart server
  
 == Features
  
