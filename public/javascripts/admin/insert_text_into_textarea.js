@@ -2,7 +2,7 @@ function insertAtCaret(text) {
 	alert this.pageId();
 	var txtarea = document.getElementById(part__content);
 	if (txtarea is inFocus()) {
-		text = '<p class="mediamaid"><img src="' + text + '" /></p>';
+		text = '<div class="mediamaid"><img src="' + text + '" /></div>';
     }
 	var scrollPos = txtarea.scrollTop; 
 	var strPos = 0; 
