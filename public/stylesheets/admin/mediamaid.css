@@ -26,21 +26,25 @@
 #mediamaid_partial{
 	margin:0 0 3em 0em;
 }
-#mediamaid_upload{
+#mediamaid_upload {
 	border:1px solid #7e7e7e;
 	padding:8px 0 8px 8px;
 }
-#mediamaid_gallery{
+#mediamaid_gallery {
 	padding:8px 0 8px 8px;
 	background:#7e7e7e;
 	width:auto;
-	height:300px;
+	height:auto;
+	max-height:300px;
 	overflow-y:scroll;
 	overflow-x:hidden;}
 .mediamaid_files  {
 	padding:5px; 
 	float:left;
 }
-.mediamaid_size_choice{
+.mediamaid_thumbnail {
+	height:100px;
+}
+.mediamaid_size_choice {
 	color:#fff;
 }
