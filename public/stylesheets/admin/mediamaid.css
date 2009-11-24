@@ -25,34 +25,37 @@
     background: #7e7e7e url(/images/admin/metadata_toggle.png) no-repeat 85% -22px; }
 #mediamaid_partial{
 	margin:0 0 3em 0em;
-	color:red;
-	
 }
 #mediamaid_upload {
 	border:1px solid #7e7e7e;
-	padding:2px 0 2px 8px;
-	color:red;
-	
+	padding-left:8px;	
 }
 #mediamaid_upload h2 {
-	line-height:2px;
-	padding:2px;
-	color:red;
+	line-height:0px;
+	padding:1px;
 }
 #mediamaid_gallery {
 	padding:8px 0 8px 8px;
-	background:#bdbdbd;
+	background:#fff;
 	width:auto;
 	height:auto;
 	max-height:300px;
 	overflow-y:scroll;
-	overflow-x:hidden;}
+	overflow-x:hidden;
+	border:1px outset #7e7e7e;
+}
 .mediamaid_files  {
 	padding:3px; 
 	float:left;
 	margin-bottom:27px;
 	
 }
+.mediamaid_files h3{
+	color:#000;
+	font-size:12px;
+	text-decoration:underline;
+}
+
 .mediamaid_thumbnail_wrapper {
 	height:100px;
 	width:100px;
@@ -70,5 +73,21 @@ IMG.mediamaid_thumbnail {
 
 }
 .mediamaid_size_choice {
-	color:#fff;
+	color:#000;
 }
+.img-shadow {
+  float:left;
+  background: url(/images/admin/shadowAlpha.png) no-repeat bottom right !important;
+  background: url(/images/admin/shadow.gif) no-repeat bottom right;
+  margin: 10px 0 0 10px !important;
+  margin: 10px 0 0 5px;
+  }
+
+.img-shadow img {
+  display: block;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  margin: -6px 6px 6px -6px;
+  padding: 4px;
+  }
