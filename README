@@ -15,9 +15,9 @@ MediaMaid is an easy-to-use asset manager extension for Radiant CMS.
 
 gem install paperclip
 
-3. In your Radiant root directory, clone the code from github:
+3. In your vendor/extensions directory, clone the code from github:
 
-git clone git@github.com:blazingcloud/radiant-media-maid.git vendor/extensions/mediamaid
+git clone git@github.com:blazingcloud/radiant-media-maid.git mediamaid
 
 4. Run Radiant extension command-line functions:
 rake radiant:extensions:mediamaid:migrate
