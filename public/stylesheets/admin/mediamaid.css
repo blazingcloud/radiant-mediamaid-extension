@@ -7,7 +7,6 @@
    -moz-border-radius-bottomright: 6px;
    -webkit-border-bottom-left-radius: 6px;
    -webkit-border-bottom-right-radius: 6px;
-   text-shadow: #666 1px 1px 0;
    text-decoration: none;
    padding: 4px 21px 5px 10px;
    position: relative;
@@ -20,15 +19,19 @@
 #content p.more_or_less a:hover, #content p.more_or_less a:active, #content p.more_or_less a:focus {
       text-decoration: underline; }
 #content .mediamaid_partial p.more_or_less #mediamaid_gallery {
-    background: #7e7e7e url(/images/admin/metadata_toggle.png) no-repeat 90% 8px; }
+    background: #7e7e7e no-repeat 90% 8px; }
+/*  For 0.9.0  background: #7e7e7e url(/images/admin/metadata_toggle.png) no-repeat 90% 8px; }
+*/
 #content p.more_or_less #mediamaid_gallery {
-    background: #7e7e7e url(/images/admin/metadata_toggle.png) no-repeat 85% -22px; }
+    background: #7e7e7e no-repeat 85% -22px; }
+/* For 0.9.0    background: #7e7e7e url(/images/admin/metadata_toggle.png) no-repeat 85% -22px; }
+*/
 #mediamaid_partial{
 	margin:0 0 3em 0em;
 }
 #mediamaid_upload {
-	border:1px solid #7e7e7e;
 	padding-left:8px;	
+	
 }
 #mediamaid_upload h2 {
 	line-height:0px;
@@ -42,27 +45,37 @@
 	max-height:300px;
 	overflow-y:scroll;
 	overflow-x:hidden;
-	border:1px outset #7e7e7e;
+	border-left-style:ridge;
+	border-top-style:ridge;
+	border-left-color: #A0A0A0;
+	border-bottom:1px solid #e2e2e2;
+	border-right:1px solid #e2e2e2;
+	
 }
 .mediamaid_files  {
 	padding:3px; 
 	float:left;
 	margin-bottom:27px;
+	margin-left:27px;
 	
 }
 .mediamaid_files h3{
 	color:#000;
 	font-size:12px;
 	text-decoration:underline;
+	text-align:center;
+	
 }
 
 .mediamaid_thumbnail_wrapper {
-	height:100px;
-	width:100px;
-	vertical-align:middle;
-	line-height:100px;
+	height:130px;
+	width:130px;
+	line-height:130px;
 	display: table-cell;
-	background:white;
+	background:#f0f0f0;
+	vertical-align:middle;
+	text-align:center;
+	
 	
 }
 IMG.mediamaid_thumbnail {
@@ -70,10 +83,13 @@ IMG.mediamaid_thumbnail {
 	vertical-align:middle;
     margin-left: auto;
     margin-right: auto;
+	text-align:center;
 
 }
 .mediamaid_size_choice {
 	color:#000;
+	line-height:0px;
+	padding:0px;
 }
 .img-shadow {
   float:left;
