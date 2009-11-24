@@ -32,7 +32,7 @@
 }
 #mediamaid_gallery {
 	padding:8px 0 8px 8px;
-	background:#7e7e7e;
+	background:#bdbdbd;
 	width:auto;
 	height:auto;
 	max-height:300px;
@@ -41,10 +41,24 @@
 .mediamaid_files  {
 	padding:3px; 
 	float:left;
+	margin-bottom:27px;
+	
 }
-.mediamaid_thumbnail {
+.mediamaid_thumbnail_wrapper {
 	height:100px;
-	margin:auto;
+	width:100px;
+	vertical-align:middle;
+	line-height:100px;
+	display: table-cell;
+	background:white;
+	
+}
+IMG.mediamaid_thumbnail {
+    display: block;
+	vertical-align:middle;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 .mediamaid_size_choice {
 	color:#fff;
