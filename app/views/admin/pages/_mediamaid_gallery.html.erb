@@ -19,9 +19,18 @@
 # uncomment to link to show media page
 #link_to image_tag (m.mediamaid.url(:thumb)), :action => "show", :id => m
 # or, leave default to insert at original size
-
-%><div class="mediamaid_thumbnail_wrapper"><a href="#" onClick="insertAtCaret('<%=m.mediamaid.url(:original) %>')"><img class="mediamaid_thumbnail" src="<%=m.mediamaid.url(:thumb)%>" alt="<%=m.mediamaid_file_name %>" /></a></div><%
-
+%>
+<a href="#" onClick="insertAtCaret('<%=m.mediamaid.url(:original) %>')">
+	<h3><%=m.mediamaid_file_name %></h3>
+</a>
+<div class="mediamaid_thumbnail_wrapper">
+	<div class="img-shadow">
+	<a href="#" onClick="insertAtCaret('<%=m.mediamaid.url(:original) %>')">
+		<img class="mediamaid_thumbnail" src="<%=m.mediamaid.url(:thumb)%>" alt="<%=m.mediamaid_file_name %>" />
+	</a>
+	</div>
+</div>
+<%
 else
 link_to m.mediamaid_file_name, :action=> "show", :id => m
 end

@@ -25,10 +25,19 @@
     background: #7e7e7e url(/images/admin/metadata_toggle.png) no-repeat 85% -22px; }
 #mediamaid_partial{
 	margin:0 0 3em 0em;
+	color:red;
+	
 }
 #mediamaid_upload {
 	border:1px solid #7e7e7e;
-	padding:8px 0 8px 8px;
+	padding:2px 0 2px 8px;
+	color:red;
+	
+}
+#mediamaid_upload h2 {
+	line-height:2px;
+	padding:2px;
+	color:red;
 }
 #mediamaid_gallery {
 	padding:8px 0 8px 8px;
