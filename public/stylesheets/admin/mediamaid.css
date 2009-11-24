@@ -29,11 +29,13 @@
 #mediamaid_partial{
 	margin:0 0 3em 0em;
 }
-#mediamaid_upload {
+
+#mediamaid_head {
+	border:1px solid #7e7e7e;
 	padding-left:8px;	
 	
 }
-#mediamaid_upload h2 {
+#mediamaid_head h2 {
 	line-height:0px;
 	padding:1px;
 }
