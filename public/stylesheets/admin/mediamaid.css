@@ -72,7 +72,6 @@
 	width:130px;
 	line-height:130px;
 	display: table-cell;
-	vertical-align:bottom;
 	text-align:center;
   
 	
@@ -93,36 +92,41 @@ IMG.mediamaid_thumbnail {
 }
 
 .shadow_border {
-border:1px solid #000;
- 
+	border:1px solid #000;
+	height:130px;
+	width:130px;
+	vertical-align:middle;
+	line-height:130px;
+	display: table-cell;
 }
+
 .shadow1 {
- border-right:1px solid #999;
- border-bottom:1px solid #999;
+ 	border-right:1px solid #999;
+ 	border-bottom:1px solid #999;
 	margin-left:auto;
 	margin-right:auto;	
 }
 .shadow2 {
- border-right:1px solid #aaa;
- border-bottom:1px solid #aaa;
+ 	border-right:1px solid #aaa;
+ 	border-bottom:1px solid #aaa;
 	margin-left:auto;
 	margin-right:auto;	
 }
 .shadow3 {
- border-right:1px solid #ccc;
- border-bottom:1px solid #ccc;
+ 	border-right:1px solid #ccc;
+ 	border-bottom:1px solid #ccc;
 	margin-left:auto;
 	margin-right:auto;
 }
 .shadow4 {
- border-right:1px solid #ddd;
- border-bottom:1px solid #ddd;
+ 	border-right:1px solid #ddd;
+ 	border-bottom:1px solid #ddd;
 	margin-left:auto;
 	margin-right:auto;
 }
 .shadow5 {
- border-right:1px solid #eee;
- border-bottom:1px solid #eee;
+ 	border-right:1px solid #eee;
+ 	border-bottom:1px solid #eee;
 	margin-left:auto;
 	margin-right:auto;
 }
