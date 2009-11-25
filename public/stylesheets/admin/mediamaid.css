@@ -29,13 +29,11 @@
 #mediamaid_partial{
 	margin:0 0 3em 0em;
 }
-
-#mediamaid_head {
-	border:1px solid #7e7e7e;
+#mediamaid_upload {
 	padding-left:8px;	
 	
 }
-#mediamaid_head h2 {
+#mediamaid_upload h2 {
 	line-height:0px;
 	padding:1px;
 }
@@ -49,6 +47,7 @@
 	overflow-x:hidden;
 	border-left-style:ridge;
 	border-top-style:ridge;
+	border-top-color: #A0A0A0;
 	border-left-color: #A0A0A0;
 	border-bottom:1px solid #e2e2e2;
 	border-right:1px solid #e2e2e2;
@@ -59,12 +58,11 @@
 	float:left;
 	margin-bottom:27px;
 	margin-left:27px;
-	
 }
+
 .mediamaid_files h3{
 	color:#000;
 	font-size:12px;
-	text-decoration:underline;
 	text-align:center;
 	
 }
@@ -74,38 +72,46 @@
 	width:130px;
 	line-height:130px;
 	display: table-cell;
-	background:#f0f0f0;
-	vertical-align:middle;
+	vertical-align:bottom;
 	text-align:center;
-	
+  
 	
 }
 IMG.mediamaid_thumbnail {
     display: block;
-	vertical-align:middle;
+	vertical-align:bottom;
     margin-left: auto;
     margin-right: auto;
 	text-align:center;
-
+	padding:2px;
+	
 }
 .mediamaid_size_choice {
 	color:#000;
 	line-height:0px;
 	padding:0px;
 }
-.img-shadow {
-  float:left;
-  background: url(/images/admin/shadowAlpha.png) no-repeat bottom right !important;
-  background: url(/images/admin/shadow.gif) no-repeat bottom right;
-  margin: 10px 0 0 10px !important;
-  margin: 10px 0 0 5px;
-  }
 
-.img-shadow img {
-  display: block;
-  position: relative;
-  background-color: #fff;
-  border: 1px solid #a9a9a9;
-  margin: -6px 6px 6px -6px;
-  padding: 4px;
-  }
+.shadow_padding{
+	border:1px solid #000;	
+}
+.shadow1 {
+ border-right:1px solid #999;
+ border-bottom:1px solid #999;	
+}
+.shadow2 {
+ border-right:1px solid #aaa;
+ border-bottom:1px solid #aaa;	
+}
+.shadow3 {
+ border-right:1px solid #ccc;
+ border-bottom:1px solid #ccc;
+}
+.shadow4 {
+ border-right:1px solid #ddd;
+ border-bottom:1px solid #ddd;
+}
+.shadow5 {
+ border-right:1px solid #eee;
+ border-bottom:1px solid #eee;
+}
