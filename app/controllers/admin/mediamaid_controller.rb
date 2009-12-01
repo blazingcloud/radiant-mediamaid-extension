@@ -13,9 +13,14 @@ class Admin::MediamaidController  < ApplicationController
 
    def create 
     @mediamaid = Mediamaid.create( params[:mediamaid] )
-    respond_to do |format|
-       flash[:notice] = 'File was successfully loaded!'   
-       format.html { render :action => "show" }
+    respond_to do |format| 
+        if @mediamaid.save
+         flash[:notice] = 'File was successfully loaded!'   
+         format.html { render :action => "show" }
+        else
+          format.html { render :action => "new" }
+          format.xml { render :xml => @mediamaid.errors, :status => :unprocessable_entity  }
+        end
      end
   end
   
