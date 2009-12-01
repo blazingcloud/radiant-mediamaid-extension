@@ -14,18 +14,29 @@ class MediamaidExtension < Radiant::Extension
   
   def activate
     admin.page.edit.add(:main, "mediamaid_gallery", :before => "edit_header")
-    # admin.nav[:content] << admin.nav_item(:mediamaid, "Mediamaid", "/admin/mediamaid"), :after => :pages
     admin.tabs.add "Media", "/admin/mediamaid", :after => "Layouts", :visibility => [:all]
-#     tab("Design").add_item "Media Maid", "/admin/mediamaid", :after => "Stylesheets"
-
-
-    #load extra admin stylesheet
      
 
     Admin::PagesController.class_eval do
 
       before_filter :set_custom_css
-    #  before_filter :include_javascript
+      #before_filter :include_javascript
+
+      def set_custom_css
+        @stylesheets << 'admin/mediamaid'
+      end
+      
+
+      #def include_javascript
+      #  @javascripts << "admin/insert_text_into_textarea.js"
+      #end
+
+    end
+    
+    Admin::MediamaidController.class_eval do
+
+      before_filter :set_custom_css
+     #before_filter :include_javascript
 
       def set_custom_css
         @stylesheets << 'admin/mediamaid'
