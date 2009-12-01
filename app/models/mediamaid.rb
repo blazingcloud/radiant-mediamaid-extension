@@ -9,7 +9,5 @@ class Mediamaid < ActiveRecord::Base
     :path => ":rails_root/public/assets/:id/:style/:basename.:extension"
   
     validates_presence_of :mediamaid_file_name 
-    # validates_presence_of :mediamaid "#{mediamaid.file_name}"_file_name
-    #validates_attachment_content_type :mediamaid, :content_type => 'image/jpeg'
-
+ 
 end
