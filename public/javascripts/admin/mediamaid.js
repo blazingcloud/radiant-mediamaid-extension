@@ -26,7 +26,7 @@ function insertAtCaret(filename, contenttype) {
     if(contentTypeArray[0]== 'image'){
 		text = '<div class="mediamaid"><img src="' + filename + '" /></div>';
 	} else if ((contentTypeArray[0] == 'application') && (contentTypeArray[1] == 'x-shockwave-flash')) {
-	 	text = '<embed src="' + filename + '" width="550" height="400"></embed>';
+	 	text = '<object width="550" height="400"><param name="movie" value="'+filename+'"><embed src="'+filename+'" width="550" height="400"></embed></object>';
 	
 	} else if (contentTypeArray[0] == "audio"){
 		text = '<div class="mediamaid"><a href="' + filename + '" />'+ filename +'</a></div>';
