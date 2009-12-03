@@ -1,4 +1,4 @@
-function insertAtCaret(filename) { 
+function insertAtCaret(filename, contenttype) { 
 	
 	// find the active div  
     var myDivArray = new Array();
@@ -18,10 +18,40 @@ function insertAtCaret(filename) {
 		}
 		i++;
     }
-   
+
+	//     var text = '';
+	//     if((contenttype == "image/gif") || (contenttype == "image/jpeg") || (contenttype == "image/png")){
+	// 	text = '<div class="mediamaid"><img src="' + filename + '" /></div>';
+	// } else if (contenttype == "audio/x-wav"){
+	// 	text = '<div class="mediamaid"><a href="' + filename + '" />'+ filename +'</a></div>';
+	// } else {
+	// 	text = filename;
+	// }
+
+
+
+
+
+
+
+
+	var text = '';
+	var contentTypeArray = new Array();
+	contentTypeArray = contenttype.split("/");
+	
+    if(contentTypeArray[0]== 'image'){
+		text = '<div class="mediamaid"><img src="' + filename + '" /></div>';
+	} else if ((contentTypeArray[0] == 'application') && (contentTypeArray[1] == 'swf')) {
+	 	text = '<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" WIDTH="550" HEIGHT="400" id="myMovieName"><PARAM NAME=movie VALUE="'+filename+'"><PARAM NAME=quality VALUE=high><PARAM NAME=bgcolor VALUE=#FFFFFF><EMBED href="'+filename+'" quality=high bgcolor=#FFFFFF WIDTH="550" HEIGHT="400" NAME="myMovieName" ALIGN="" TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></EMBED></OBJECT>';
+	
+	} else if (contentTypeArray[0] == "audio"){
+		text = '<div class="mediamaid"><a href="' + filename + '" />'+ filename +'</a></div>';
+	} else {
+		text = '<div class="mediamaid"><a href="' + filename + '" />'+ filename +'</a></div>';
+	}
+	
 	var txtarea = document.getElementById(areaId);
 	
-	var text = '<div class="mediamaid"><img src="' + filename + '" /></div>';
 	var scrollPos = txtarea.scrollTop; 
 	var strPos = 0; 
 	var br = ((txtarea.selectionStart || txtarea.selectionStart == '0') ? "ff" : (document.selection ? "ie" : false ) ); 

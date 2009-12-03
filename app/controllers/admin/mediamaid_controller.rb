@@ -1,25 +1,25 @@
-class Admin::MediamaidController  < ApplicationController
+class Admin::MediamaidController < ApplicationController
   
   def index
     @mediamaids = Mediamaid.all(:order=>"created_at DESC")
-#      @movies = Movie.all(:order => " year DESC ")
+# @movies = Movie.all(:order => " year DESC ")
     @mediamaid = Mediamaid.new
-  end 
-
+  end
+ 
   def new
     @mediamaid = Mediamaid.new
   end
-
-
-   def create 
+ 
+ 
+   def create
     @mediamaid = Mediamaid.create( params[:mediamaid] )
-    respond_to do |format| 
+    respond_to do |format|
         if @mediamaid.save
-         flash[:notice] = 'File was successfully loaded!'   
+         flash[:notice] = 'File was successfully loaded!'
          format.html { render :action => "show" }
         else
           format.html { render :action => "new" }
-          format.xml { render :xml => @mediamaid.errors, :status => :unprocessable_entity  }
+          format.xml { render :xml => @mediamaid.errors, :status => :unprocessable_entity }
         end
      end
   end
@@ -27,22 +27,22 @@ class Admin::MediamaidController  < ApplicationController
   
   def show
     @mediamaid = Mediamaid.find(params[:id])
-
+ 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @mediamaid }
+      format.xml { render :xml => @mediamaid }
     end
   end
   
   def me
     flash[:notice] = "Hi!"
   end
-
+ 
   
     def destroy
     @mediamaid = Mediamaid.find(params[:id])
     @mediamaid.destroy
-
+ 
     respond_to do |format|
       flash[:notice] = "Media was removed from Gallery."
       format.html { redirect_to(admin_mediamaid_index_url) }

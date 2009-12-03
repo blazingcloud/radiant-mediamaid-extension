@@ -1,13 +1,21 @@
 class Mediamaid < ActiveRecord::Base 
-   require "paperclip"
-  has_attached_file :mediamaid, :styles => { 
-    :thumb => "100x100>",
-    :small => "150x150>", 
-    :medium => "200x200>", 
-    :large => "400x400>" },   
-    :url  => "/assets/:id/:style/:basename.:extension", 
-    :path => ":rails_root/public/assets/:id/:style/:basename.:extension"
+  require "paperclip"
+
+
+    has_attached_file :mediamaid,   :styles => {
+           :thumb => "100x100>"
+     },   
+      :whiny => false,
+      :url  => "/assets/:id/:style/:basename.:extension", 
+      :path => ":rails_root/public/assets/:id/:style/:basename.:extension" 
+
+
+
   
     validates_presence_of :mediamaid_file_name 
+    validates_attachment_content_type :mediamaid, :content_type => [ 'image/jpeg', 'image/gif', 'image/png', 'audio/x-wav', 'application/x-wav', 'application/x-shockwave-flash', 'application/pdf' ]
+
  
+    
+  
 end

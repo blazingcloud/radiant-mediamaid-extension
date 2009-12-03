@@ -1,0 +1,10 @@
+README
+
+Installation Instructions
+
+- git clone git@github.com:blazingcloud/radiant-media-maid.git  mediamaid
+- cp *.css ../../../../../public/stylesheets/admin/
+- cp *.js ../../../../../public/javascripts/admin/
+- rake db:migrate
+- rake radiant:extensions:mediamaid:migrate
+
