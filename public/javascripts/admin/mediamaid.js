@@ -41,7 +41,7 @@ function insertAtCaret(filename, contenttype) {
 	
     if(contentTypeArray[0]== 'image'){
 		text = '<div class="mediamaid"><img src="' + filename + '" /></div>';
-	} else if ((contentTypeArray[0] == 'application') && (contentTypeArray[1] == 'swf')) {
+	} else if ((contentTypeArray[0] == 'application') && (contentTypeArray[1] == 'x-shockwave-flash')) {
 	 	text = '<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" WIDTH="550" HEIGHT="400" id="myMovieName"><PARAM NAME=movie VALUE="'+filename+'"><PARAM NAME=quality VALUE=high><PARAM NAME=bgcolor VALUE=#FFFFFF><EMBED href="'+filename+'" quality=high bgcolor=#FFFFFF WIDTH="550" HEIGHT="400" NAME="myMovieName" ALIGN="" TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></EMBED></OBJECT>';
 	
 	} else if (contentTypeArray[0] == "audio"){
