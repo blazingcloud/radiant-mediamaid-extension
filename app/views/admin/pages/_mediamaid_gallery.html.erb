@@ -1,21 +1,14 @@
 <div id="mediamaid_partial">
 	<script src="/javascripts/admin/mediamaid.js" type="text/javascript" ></script>
-	<div id="mediamaid_head">
-		<h2>Media Gallery</h2><p>Click image icon to insert</p>
-	</div>
+	<div id="mediamaid_head"><div id="mediamaid_title">Media Gallery</div><div id="ClickImageMsg" style="display:none;"><br />Click thumbnail to insert into post</div></div>
 	<div id="mediamaid_gallery" style="display:none;">
 <% 
    @mediamaids = Mediamaid.find(:all) 
    @mediamaids.each do |m|%>
   	 <div class="mediamaid_files">
-	    <%
-	    if (m.mediamaid.url(:thumb))
-		# uncomment to link to show media page
-		#link_to image_tag (m.mediamaid.url(:thumb)), :action => "show", :id => m
-		# or, leave default to insert at original size
-		%>
-		
-		<%= len = "#{m.mediamaid.url(:original)}".length - 3
+	    <%	    
+	if (m.mediamaid.url(:thumb)) # show this only if there's a thumb available
+	    len = "#{m.mediamaid.url(:original)}".length - 3
 
 		image_url = m.mediamaid.url(:thumb)
 		if m.mediamaid.url(:original)[len,3] == "wav"
@@ -29,14 +22,7 @@
 		end
 
 		%>
-
-
-	   		 <!-- Insert
-			<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('<%= m.mediamaid.url(:small) %>');return false;">S</a>
-			<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('<%= m.mediamaid.url(:medium) %>')">M</a>
-			<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('<%= m.mediamaid.url(:large) %>')">L</a>
-			<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('<%= m.mediamaid.url(:original) %>')">O</a> -->
-			<div class="div_link">
+				<div class="div_link">
 				<div class="mediamaid_thumbnail_wrapper">
 					<div class="shadow5">
 					<div class="shadow4">
@@ -58,15 +44,13 @@
 			<h3><%=m.mediamaid_file_name %></h3>
 		
 			<%
-		else
-			link_to m.mediamaid_file_name, :action=> "show", :id => m
-		end
+	else   # if no thumb, just show filename
+		link_to m.mediamaid_file_name, :action=> "show", :id => m
+	end
 		%>
 		</div>
 <% end %>
 	</div>
 	<p class="more_or_less" padding:4px 0 5px;>
-	<a id="more_mediamaid_gallery" href="javascript: $('mediamaid_gallery').show(); $('less_mediamaid_gallery').show(); $('more_mediamaid_gallery').hide(); this.stop()" style="background: #7e7e7e;" >View Images</a>
-	<a id="less_mediamaid_gallery" style="display:none; background: #7e7e7e;" href="javascript: $('mediamaid_gallery').hide(); $('more_mediamaid_gallery').show(); $('less_mediamaid_gallery').hide(); this.stop()">Hide Images</a>
-	</p>
-</div>
+	<a id="more_mediamaid_gallery" href="javascript: $('mediamaid_gallery').show();$('ClickImageMsg').show(); $('less_mediamaid_gallery').show(); $('more_mediamaid_gallery').hide(); this.stop()" style="background: #7e7e7e;" >View Images</a>
+	<a id="less_mediamaid_gallery" style="display:none; background: #7e7e7e;" href="javascript: $('mediamaid_gallery').hide();$('ClickImageMsg').hide(); $('more_mediamaid_gallery').show(); $('less_mediamaid_gallery').hide(); this.stop()">Hide Images</a></p>

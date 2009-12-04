@@ -37,6 +37,31 @@
 	line-height:0px;
 	padding:1px;
 }
+
+#mediamaid_head {
+	width:100%; 
+	height:35px;
+	vertical-align:bottom;
+	text-align:bottom;	
+}
+
+#mediamaid_title {
+	float:left;
+	position:relative;
+	font-size:14pt;
+	font-weight:bold;
+	height:100%;
+	
+}
+
+#ClickImageMsg {
+	float:right; 
+	position:relative;
+	height:100%;
+	text-align:bottom;
+	vertical-align:bottom;
+}
+
 #mediamaid_gallery {
 	padding:8px 0 8px 8px;
 	background:#fff;
