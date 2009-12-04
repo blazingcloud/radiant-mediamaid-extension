@@ -6,8 +6,7 @@ class Mediamaid < ActiveRecord::Base
      },   
       :whiny => false,
       :url  => "/assets/:id/:style/:basename.:extension", 
-      :path => ":rails_root/public/assets/:id/:style/:basename.:extension" 
-
+      :path => ":rails_root/public/assets/:id/:style/:basename.:extension"
 
 
   
@@ -18,3 +17,8 @@ class Mediamaid < ActiveRecord::Base
     
   
 end
+
+      
+      
+      
+      

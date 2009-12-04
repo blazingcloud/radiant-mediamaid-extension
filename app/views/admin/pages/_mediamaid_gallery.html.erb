@@ -14,6 +14,22 @@
 		#link_to image_tag (m.mediamaid.url(:thumb)), :action => "show", :id => m
 		# or, leave default to insert at original size
 		%>
+		
+		<%= len = "#{m.mediamaid.url(:original)}".length - 3
+
+		image_url = m.mediamaid.url(:thumb)
+		if m.mediamaid.url(:original)[len,3] == "wav"
+			image_url = "/images/admin/gallery_wav.jpg"	
+		end 
+		if m.mediamaid.url(:original)[len,3] == "swf"
+			image_url = "/images/admin/gallery_swf.jpg"	
+		end
+		if m.mediamaid.url(:original)[len,3] == "pdf"
+			image_url = "/images/admin/gallery_pdf.jpg"	
+		end
+
+		%>
+
 
 	   		 <!-- Insert
 			<a href="#" class="mediamaid_size_choice" onClick="insertAtCaret('<%= m.mediamaid.url(:small) %>');return false;">S</a>
@@ -29,7 +45,7 @@
 					<div class="shadow1">
 						<a href="#" onClick="insertAtCaret('<%=m.mediamaid.url(:original) %>', '<%=m.mediamaid_content_type%>'); return false; ">
 							<div class="shadow_border">
-									<img class="mediamaid_thumbnail" src="<%=m.mediamaid.url(:thumb)%>" alt="<%=m.mediamaid_file_name %>" />
+									<img class="mediamaid_thumbnail" src="<%=image_url%>" alt="<%=m.mediamaid_file_name %>" />
 							</div>
 						</a>
 					</div>	
