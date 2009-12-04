@@ -1,12 +1,33 @@
-
-<h1><%= @mediamaid.mediamaid_file_name %> Image Sizes</h1>
-<blockquote>
-About <%= @mediamaid.mediamaid_file_name %>:
-<%= @mediamaid.mediamaid_content_type %>, <%= @mediamaid.mediamaid_file_size %>
-</blockquote>
-<p>Thumbnail: <br /><%= image_tag @mediamaid.mediamaid.url(:thumb) %></p>
-<p>Original:<br />
-<%= image_tag @mediamaid.mediamaid.url(:original) %>
+<h1><%= @mediamaid.mediamaid_file_name %> Information</h1>
+<p><table cellpadding=5>
+<tr>
+	<td>Content Type:</td><td> <strong><%= @mediamaid.mediamaid_content_type %></strong>
+		</td></tr>
+<tr><td>Size:</td><td> 
+	<% size = @mediamaid.mediamaid_file_size 
+	
+	if (size> 1000)
+		units = "KB"
+		divSize = size/1000
+	elsif ( size > 1000000 )
+		divSize = size/1000000
+		units = "MB"
+	else 
+		divSize = size
+		units = "bytes"
+	end
+		%>
+		<strong><%=divSize %></strong> <%= units %> 
+		<% if units != "bytes"%>(<%=size%> bytes)<% end %>
+	</td>
+	</tr>
+	</table>
 </p>
-
+<% if @mediamaid.mediamaid_content_type =~ /image/ %>
+<h2>Image Sizes</h2>
+	<p>Thumbnail: <br /><%= image_tag @mediamaid.mediamaid.url(:thumb) %></p>
+	<p>Original:<br />
+	<%= image_tag @mediamaid.mediamaid.url(:original) %>
+	</p>
+<% end %>
 		
