@@ -1,6 +1,3 @@
-# Uncomment this if you reference any of your controllers in activate
-# require_dependency 'application_controller'
-
 class MediamaidExtension < Radiant::Extension
   version "1.0"
   description "MediaMaid is an asset management tool for Radiant CMS"
@@ -13,7 +10,8 @@ class MediamaidExtension < Radiant::Extension
   end
   
   def activate
-    admin.page.edit.add(:main, "mediamaid_gallery", :before => "edit_header")
+    admin.page.edit.add(:form, "mediamaid_gallery", :before=> "edit_page_parts")
+#    admin.page.edit.add(:main, "mediamaid_gallery", :after => "edit_title")
     admin.tabs.add "Media", "/admin/mediamaid", :after => "Layouts", :visibility => [:all]
      
 
@@ -26,7 +24,7 @@ class MediamaidExtension < Radiant::Extension
         @stylesheets << 'admin/mediamaid'
       end
       
-
+      # uncomment for 0.9, and remove JS tag from view
       #def include_javascript
       #  @javascripts << "admin/insert_text_into_textarea.js"
       #end

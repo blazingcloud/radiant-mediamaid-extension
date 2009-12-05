@@ -27,7 +27,8 @@
 /* For 0.9.0    background: #7e7e7e url(/images/admin/metadata_toggle.png) no-repeat 85% -22px; }
 */
 #mediamaid_partial{
-	margin:0 0 3em 0em;
+	margin:0 0 3px 0em;
+	width:100%;
 }
 #mediamaid_upload {
 	padding-left:8px;	
@@ -38,36 +39,35 @@
 	padding:1px;
 }
 
-#mediamaid_head {
-	width:100%; 
-	height:35px;
-	vertical-align:bottom;
-	text-align:bottom;	
-}
-
-#mediamaid_title {
-	float:left;
-	position:relative;
-	font-size:14pt;
-	font-weight:bold;
-	height:100%;
-	
-}
-
 #ClickImageMsg {
-	float:right; 
-	position:relative;
-	height:100%;
-	text-align:bottom;
+	color:#A0A0A0;
+	float:left;
+	font-size:9pt;
+}
+
+#mediamaid_header {
+	float:right;
+	text-align:right;
 	vertical-align:bottom;
+	width:100%;
+}
+
+#mediamaid_header a {
+	text-decoration:none;
+	color:#A0A0A0;
+}
+
+#mediamaid_header a.hover{
+	text-decoration:underline;
 }
 
 #mediamaid_gallery {
+	margin: 5px;
 	padding:8px 0 8px 8px;
 	background:#fff;
 	width:auto;
 	height:auto;
-	max-height:300px;
+	max-height:250px;
 	overflow-y:auto;
 	overflow-x:hidden;
 	border-left-style:ridge;
@@ -84,6 +84,16 @@
 	margin-bottom:27px;
 	margin-left:27px;
 }
+
+.mediamaid_label {
+	border: 1px solid #000000;
+	white-space: nowrap;
+	width: 100%;
+	overflow: hidden;
+	font-size:9pt;
+	width:130px;
+}
+
 
 .mediamaid_files h3{
 	color:#000;
