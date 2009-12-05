@@ -40,9 +40,13 @@
 }
 
 #ClickImageMsg {
-	color:#A0A0A0;
+	color:black;
 	float:left;
+	text-align:left;
 	font-size:9pt;
+	vertical-align:bottom;
+	font-style:italic;
+	margin: 0 0 0 5px;
 }
 
 #mediamaid_header {
@@ -76,6 +80,8 @@
 	border-left-color: #A0A0A0;
 	border-bottom:1px solid #e2e2e2;
 	border-right:1px solid #e2e2e2;
+	float:left;
+	clear:both;
 	
 }
 .mediamaid_files  {
@@ -86,7 +92,7 @@
 }
 
 .mediamaid_label {
-	border: 1px solid #000000;
+/*	border: 1px solid #000000;*/
 	white-space: nowrap;
 	width: 100%;
 	overflow: hidden;

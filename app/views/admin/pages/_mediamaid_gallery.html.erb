@@ -1,11 +1,12 @@
 <div id="mediamaid_partial">
 	<script src="/javascripts/admin/mediamaid.js" type="text/javascript"></script>
-	<div id="mediamaid_header">		
-		<span id="ClickImageMsg" style="display:none;"><i>Click thumbnail to insert into post</i></span>	
+		
+		<div id="mediamaid_header">		
+			<div id="ClickImageMsg" style="display:none;"><br />Click thumbnail to insert into post</div>
+		
 		<a id="more_mediamaid_gallery" href="javascript:$('mediamaid_gallery').show();$('ClickImageMsg').show(); $('less_mediamaid_gallery').show(); $('more_mediamaid_gallery').hide(); this.stop()" style="text-decoration:none;" >Show Media <img src="/images/admin/media.png" alt="Click to view media gallery" /></a>
 		<a id="less_mediamaid_gallery" style="display:none; text-decoration:none;" href="javascript: $('mediamaid_gallery').hide();$('ClickImageMsg').hide(); $('more_mediamaid_gallery').show(); $('less_mediamaid_gallery').hide(); this.stop()">Hide Media <img src="/images/admin/media.png" alt="Click to view media gallery" /></a>
 	</div>
-</div>
 <div id="mediamaid_gallery" style="display:none;">
 	<% 
 	   @mediamaids = Mediamaid.all(:order=>"created_at DESC")
