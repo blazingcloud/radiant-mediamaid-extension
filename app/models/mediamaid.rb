@@ -1,10 +1,10 @@
 class Mediamaid < ActiveRecord::Base 
   require "paperclip"
 
-  thumb_size = "'" + Radiant::Config['mediamaid_thumb'] + ">'"
-  small_size = "'" + Radiant::Config['mediamaid_small'] + ">'"
-  medium_size = "'" + Radiant::Config['mediamaid_medium'] + ">'"
-  large_size = "'" + Radiant::Config['mediamaid_large'] + ">'"
+  thumb_size  =  Radiant::Config['mediamaid.thumb'] + ">"
+  small_size  = Radiant::Config['mediamaid.small'] + ">"
+  medium_size = Radiant::Config['mediamaid.medium'] + ">"
+  large_size  = Radiant::Config['mediamaid.large'] + ">"
     has_attached_file :mediamaid,   :styles => {
            :thumb => thumb_size# ,
            #            :small => small_size,
