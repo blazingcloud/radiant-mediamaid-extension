@@ -1,13 +1,14 @@
 class Mediamaid < ActiveRecord::Base 
   require "paperclip"
 
+  thumb_size = "'" + Radiant::Config['mediamaid_thumb'] + ">'"
     has_attached_file :mediamaid,   :styles => {
-           :thumb => "100x100>"
+           :thumb => thumb_size
      },   
       :whiny => false,
       :url  => "/assets/:id/:style/:basename.:extension", 
-      :path => ":rails_root/public/assets/:id/:style/:basename.:extension"
-
+      :path => ":rails_root/public/assets/:id/:style/:basename.:extension",
+      :default_url => "/:class/:attachment/missing_:style.png"
 
   
     validates_presence_of :mediamaid_file_name 
