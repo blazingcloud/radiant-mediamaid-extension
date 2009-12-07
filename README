@@ -5,7 +5,7 @@ MediaMaid is an easy-to-use asset manager extension for Radiant CMS.
  
 == Getting Started
    
-1. Install ImageMagick for your system. i.e. "Mac OS X":http://www.imagemagick.org/script/binary-releases.php#macosx
+1. Install ImageMagick for your system. i.e. for Mac OS X":http://www.imagemagick.org/script/binary-releases.php#macosx
 Follow the various steps per O/S to fully install ImageMagick.  I found it helpful to edit the ".bashrc" file in my Mac O/S to add the environment variables:
 
 MAGICK_HOME=[ImageMagick Installation Directory]/ImageMagick-6.5.8
@@ -39,6 +39,9 @@ rake radiant:extensions:mediamaid:update
 == Features
  
 - Resizes images to thumbnails on upload
-- Customizeable upload sizes, defaults
-- Inserts image, video, and audio files, with HTML mark-up into blog post
-- Access to gallery from edit post pages
+- Configure thumbnail, and other sizes through admin UI
+- Super easy 1-click insertion of image, video, and audio files, with HTML mark-up into blog post
+- Users can view image gallery without leaving Edit Page
+
+Icons from:
+
