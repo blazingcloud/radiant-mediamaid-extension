@@ -4,28 +4,41 @@ MediaMaid is an easy-to-use asset manager extension for Radiant CMS.
  
  
 == Getting Started
- 
- 
-[this will be procedure to install extension ]
- 
-1. Install ImageMagick. "Mac OS X":http://www.imagemagick.org/script/binary-releases.php#macosx
+   
+1. Install ImageMagick for your system. i.e. "Mac OS X":http://www.imagemagick.org/script/binary-releases.php#macosx
+Follow the various steps per O/S to fully install ImageMagick.  I found it helpful to edit the ".bashrc" file in my Mac O/S to add the environment variables:
+
+MAGICK_HOME=[ImageMagick Installation Directory]/ImageMagick-6.5.8
+PATH=[other path vars]:[ImageMagick installation directory]/bin
+DYLD_LIBRARY_PATH=[your installation directory]/lib
 
 
 2. If you don't already have it, you'll need the paperclip gem
 
 gem install paperclip
 
-3. In your vendor/extensions directory, clone the code from github:
+3. If you don't have it installed, install Settings extension. In your Radiant root directory, enter:
+
+git clone git://github.com/Squeegy/radiant-settings.git settings
+
+4. Run the following to fully install Settings:
+
+rake radiant:extensions:settings:migrate
+rake radiant:extensions:settings:update
+
+5. In your vendor/extensions directory, clone the code from github:
 
 git clone git@github.com:blazingcloud/radiant-media-maid.git mediamaid
 
-4. Run Radiant extension command-line functions:
+6. Run Radiant extension command-line functions:
 rake radiant:extensions:mediamaid:migrate
 rake radiant:extensions:mediamaid:update
 
-5. Restart server
+7. Restart server
  
 == Features
  
-- resizes images to thumbnails
-- access to gallery from single post admin pages
+- Resizes images to thumbnails on upload
+- Customizeable upload sizes, defaults
+- Inserts image, video, and audio files, with HTML mark-up into blog post
+- Access to gallery from edit post pages
