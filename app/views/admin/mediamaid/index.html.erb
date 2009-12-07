@@ -8,9 +8,9 @@
 <%= f.submit name="Upload"%>
 <% end %>
 
-<table cellpadding=5>
-<th>
-<td>Thumbnail</td><td>Content-Type</td><td>Remove</td></th>
+<table cellpadding=5 border=0>
+	<tr>
+<th>Thumbnail</th><th>Filename</th><th>Content-Type</th><th>Remove</th></tr>
 <% @mediamaids.each do |m| %>
 	<tr>
 		
