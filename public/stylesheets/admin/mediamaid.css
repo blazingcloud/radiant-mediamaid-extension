@@ -1,3 +1,20 @@
+#content #mediamaid_upload {
+	border:1px solid #A0A0A0;
+}
+
+#content #mediamaid_gallery_index{
+/*	border:1px solid #A0A0A0;*/
+	padding:5px;
+	
+}
+
+#content #mediamaid_gallery_index a {
+	text-decoration:none;
+}
+#content #mediamaid_gallery_index a:hover {
+	text-decoration:underline;
+}
+
 #content p.more_or_less a {
    background: #7e7e7e;
 	color:#fff;

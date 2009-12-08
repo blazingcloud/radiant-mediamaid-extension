@@ -38,7 +38,7 @@ class Admin::MediamaidController < ApplicationController
   end
  
   
-    def destroy
+  def remove
     @mediamaid = Mediamaid.find(params[:id])
     @mediamaid.destroy
  
@@ -47,6 +47,5 @@ class Admin::MediamaidController < ApplicationController
       format.html { redirect_to(admin_mediamaid_index_url) }
     end
   end
-  
   
 end
