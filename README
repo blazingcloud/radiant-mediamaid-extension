@@ -1,7 +1,14 @@
 == Welcome to MediaMaid
  
 MediaMaid is an easy-to-use asset manager extension for Radiant CMS.
- 
+
+== Features
+
+- Resizes images to thumbnails on upload
+- Configure thumbnail, and other sizes through admin UI
+- Super easy 1-click insertion of image, video, and audio files, with HTML mark-up into blog post
+- Users can view image gallery without leaving Edit Page
+
  
 == Getting Started
    
@@ -36,12 +43,4 @@ rake radiant:extensions:mediamaid:update
 
 7. Restart server
  
-== Features
- 
-- Resizes images to thumbnails on upload
-- Configure thumbnail, and other sizes through admin UI
-- Super easy 1-click insertion of image, video, and audio files, with HTML mark-up into blog post
-- Users can view image gallery without leaving Edit Page
-
-Icons from:
 

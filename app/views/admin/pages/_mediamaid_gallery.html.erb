@@ -10,6 +10,7 @@
 <div id="mediamaid_gallery" style="display:none;">
 	<% 
 	   @mediamaids = Mediamaid.all(:order=>"created_at DESC")
+    
 	   @mediamaids.each do |m|%>
 	  	 <div class="mediamaid_files">
 			    <%	    

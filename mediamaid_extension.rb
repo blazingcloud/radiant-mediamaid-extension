@@ -11,7 +11,6 @@ class MediamaidExtension < Radiant::Extension
   
   def activate
     admin.page.edit.add(:form, "mediamaid_gallery", :before=> "edit_page_parts")
-#    admin.page.edit.add(:main, "mediamaid_gallery", :after => "edit_title")
     admin.tabs.add "Media", "/admin/mediamaid", :after => "Layouts", :visibility => [:all]
 
 # default settings for configuration of medimaid image sizes
@@ -19,6 +18,7 @@ class MediamaidExtension < Radiant::Extension
     Radiant::Config['mediamaid.small'] ||= "200x200"
     Radiant::Config['mediamaid.medium'] ||= "300x300"
     Radiant::Config['mediamaid.large'] ||= "400x400"
+    
   
     Admin::PagesController.class_eval do
 
@@ -31,7 +31,7 @@ class MediamaidExtension < Radiant::Extension
       
       # uncomment for 0.9, and remove JS tag from view
       #def include_javascript
-      #  @javascripts << "admin/insert_text_into_textarea.js"
+      #  @javascripts << "admin/mediamaid.js"
       #end
 
     end
@@ -47,7 +47,7 @@ class MediamaidExtension < Radiant::Extension
       
 
       #def include_javascript
-      #  @javascripts << "admin/insert_text_into_textarea.js"
+      #  @javascripts << "admin/mediamaid.js"
       #end
 
     end

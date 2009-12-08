@@ -9,7 +9,8 @@
 <div id="mediamaid_gallery_index">
 	<h3>Media Gallery</h3>
 	<table cellpadding=5 border=0 width="100%">
-	<% @mediamaids.each do |m| %>
+	<% 
+	@mediamaids.each do |m| %>
 		<tr>
 		
 			<td><%=	link_to image_tag(m.mediamaid.url(:thumb)), :action => "show", :id => m 	if (m.mediamaid_content_type =~ /image/) %> </td>
