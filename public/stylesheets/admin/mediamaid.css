@@ -89,6 +89,7 @@
 	width:auto;
 	height:auto;
 	max-height:250px;
+	min-width:200px;
 	overflow-y:auto;
 	overflow-x:hidden;
 	border-left-style:ridge;

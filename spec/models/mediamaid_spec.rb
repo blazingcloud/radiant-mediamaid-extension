@@ -5,9 +5,8 @@ require File.dirname(__FILE__) + "/../spec_helper"
 # and in that regard, all non-image content-types, and anything ImageMagick can't manipulate
 
 describe Mediamaid do
-  before do
-    @mediamaid = Mediamaid.new
-    @mediamaid.mediamaid_file_name = "sample.gif"
+   before(:each) do
+       @mediamaid = Mediamaid.new
    end
   
   it "should be invalid if mediamaid file name is nil" do
@@ -45,8 +44,4 @@ describe Mediamaid do
     @mediamaid.mediamaid_content_type = "audio/mp3"
     @mediamaid.should_not be_valid
   end
-  
-  
-    
 end
-  

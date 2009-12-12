@@ -1,22 +1,29 @@
 require File.dirname(__FILE__) + "/../../spec_helper"
 
 describe Admin::MediamaidController do
+  integrate_views
   
-  before do
-    @mediamaid = Mediamaid.new
+  before(:each) do
+    @mediamaid = mock_model(Mediamaid)
+
+    @current_user = mock_model(User)
+    controller.stub!(:current_user).and_return(@current_user)
+    @current_user.stub!(:admin?).and_return(true)
   end
 
- it "should flash a notice after removing an image" do
-   delete :destroy, :id => @mediamaid.id
-    response.should flash[:notice]
+  describe 'remove' do
+
+    
+   it "should remove an image" do
+     
+     Mediamaid.should_receive(:find).with("37").and_return(@mediamaid)
+     Mediamaid.find("37")
+     Mediamaid.should_receive(:destroy).with("37").and_return(true)
+     Mediamaid.destroy("37")
+     flash.now[:notice].should != nil
+     response.should redirect_to(admin_mediamaid_index_url)
+    end
   end
-  #mediamaid controller
-  it "should redirect to show after clicking upload if upload is successful"
-  it "should redirect to show after clicking upload if upload fails"
-  it "should show all images on the index page"
-  it "should show errors after a failed upload"
-  it "should redirect to show page after clicking on an image"
-  it "should show avaliable sizes on show page"
-  #pages view
-  it "should show gallery when 'view images' is clicked"
 end
+  
+  

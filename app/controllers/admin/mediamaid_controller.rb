@@ -33,10 +33,6 @@ class Admin::MediamaidController < ApplicationController
     end
   end
   
-  def me
-    flash[:notice] = "Hi!"
-  end
- 
   
   def remove
     @mediamaid = Mediamaid.find(params[:id])
@@ -44,7 +40,7 @@ class Admin::MediamaidController < ApplicationController
  
     respond_to do |format|
       flash[:notice] = "Media was removed from Gallery."
-      format.html { redirect_to(admin_mediamaid_index_url) }
+      format.html { redirect_to(admin_mediamaid_index) }
     end
   end
   

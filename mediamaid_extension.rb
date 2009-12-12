@@ -10,10 +10,11 @@ class MediamaidExtension < Radiant::Extension
   end
   
   def activate
+
     admin.page.edit.add(:form, "mediamaid_gallery", :before=> "edit_page_parts")
     admin.tabs.add "Media", "/admin/mediamaid", :after => "Layouts", :visibility => [:all]
 
-# default settings for configuration of medimaid image sizes
+# default settings for configuration of medimaid image sizes, to change go to Settings in Admin UI
     Radiant::Config['mediamaid.thumb'] ||= "100x100"
     Radiant::Config['mediamaid.small'] ||= "200x200"
     Radiant::Config['mediamaid.medium'] ||= "300x300"
@@ -23,7 +24,6 @@ class MediamaidExtension < Radiant::Extension
     Admin::PagesController.class_eval do
 
       before_filter :set_custom_css
-      #before_filter :include_javascript
 
       def set_custom_css
         @stylesheets << 'admin/mediamaid'
