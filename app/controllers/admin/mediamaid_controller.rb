@@ -40,7 +40,7 @@ class Admin::MediamaidController < ApplicationController
  
     respond_to do |format|
       flash[:notice] = "Media was removed from Gallery."
-      format.html { redirect_to(admin_mediamaid_index) }
+      format.html { redirect_to(admin_mediamaid_index_url) }
     end
   end
   
