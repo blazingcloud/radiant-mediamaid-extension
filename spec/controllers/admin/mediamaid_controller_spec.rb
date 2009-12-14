@@ -22,11 +22,9 @@ describe Admin::MediamaidController do
 
   describe "show" do
     it "should show individual media on index page" do
-      get :show, :id => @mediamaid.id
-      response.should
-      #Mediamaid.should_receive(:find).with("37").and_return(@mediamaid)
-      #Mediamaid.find("37")
-      # how to show that it's drawing to the index page with this mediamaid info? in views?
+      Mediamaid.should_receive(:find).with("37").and_return(@mediamaid)
+      Mediamaid.find("37")
+
     end
     
     it "should go to index if no photo provided" do
@@ -44,10 +42,13 @@ describe Admin::MediamaidController do
   
   describe "create" do
     it "should create new media object and flash success, and show image" do
-      Mediamaid.should_receive(:create).with("30").and_return(@mediamaid)
-      Mediamaid.create("30")
+      Mediamaid.mediamaid_file_name = "patrick_cookie.JPG"
+    #  Mediamaid.should_receive(:create).with("30").and_return(@mediamaid)
+    #  Mediamaid.create("30")
+    #  Mediamaid.should_receive(:create).with("30").and_return(@mediamaid)
+    #  Mediamaid.create(:mediamaid_file_name=>"patrick_cookie.JPG")
       flash.now[:notice].should != nil #known issue re: knowing/comparing flash contents
-      response.should have_tag("td", :text=>"Original")  #shows in show view
+      response.should have_tag("h3", :text=>"patrick_cookie.JPG Information")  
 
     end
     it "should show errors after a failed upload" do
