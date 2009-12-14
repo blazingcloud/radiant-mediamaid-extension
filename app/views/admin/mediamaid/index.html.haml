@@ -1,0 +1,22 @@
+%div#mediamaid_upload
+  %h3 Add media
+  = error_messages_for "mediamaid"
+  -form_for :mediamaid, :url  => { :action  => "create" }, :html  => { :multipart  => true } do |f|
+    %p 
+      Browse your computer: 
+      = f.file_field :mediamaid
+      &nbsp;&nbsp;
+      = f.submit name="Upload"
+%div#mediamaid_gallery_index
+  %h3 
+    Media Gallery
+    %table{:cellpadding=>5, :border=>0, :width=>"100%"}
+      - @mediamaids.each do |m|
+        %tr
+          %td=	link_to image_tag(m.mediamaid.url(:thumb)), :action => "show", :id => m if (m.mediamaid_content_type =~ /image/) 
+          %td
+            %strong
+            = link_to m.mediamaid_file_name, :action => "show", :id  => m
+            = link_to m.mediamaid_content_type, :action => "show", :id  => m 
+          %td= m.created_at.mon, "/", m.created_at.day, "/", m.created_at.year
+          %td= link_to image_tag('/images/admin/remove.png'), remove_admin_mediamaid_url(m),:confirm=>"Are you sure?"
