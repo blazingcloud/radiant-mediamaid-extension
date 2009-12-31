@@ -22,7 +22,31 @@ namespace :radiant do
           mkdir_p RAILS_ROOT + directory, :verbose => false
           cp file, RAILS_ROOT + path, :verbose => false
         end
-      end  
+      end
+
+      desc "Uploads batches of files from a location local to web server"
+      task :batch_import => :environment do
+        require File.dirname(__FILE__) + "/../../app/models/mediamaid"
+
+        print "All the files in the given directory will be imported"
+        print "Directory path should be specified like: /usr/name/myfiles/"
+        print "Please enter the directory:"
+
+        dirpath = $stdin.gets.chomp
+
+        Dir.foreach(dirpath) do |entry|
+           filepath = dirpath+entry
+           if (File.file?(filepath))
+             p "Importing file: #{filepath}"
+             fileobject = File.new(filepath, "r")
+             mediamaid = Mediamaid.new(:mediamaid => fileobject)
+             p "-----------> import failed for #{filepath}" if !mediamaid.save
+           end
+        end
+
+        print "Directory import complete: #{dirpath}\n"
+
+      end
     end
   end
 end
