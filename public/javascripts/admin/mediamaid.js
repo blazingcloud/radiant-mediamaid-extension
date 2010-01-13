@@ -30,6 +30,8 @@ function insertAtCaret(filename, contenttype) {
 	
 	} else if (contentTypeArray[0] == "audio"){
 		text = '<div class="mediamaid"><a href="' + filename + '" />'+ filename +'</a></div>';
+	} else if (contentTypeArray[0] == 'url'){
+		text = filename;
 	} else {
 		text = '<div class="mediamaid"><a href="' + filename + '" />'+ filename +'</a></div>';
 	}

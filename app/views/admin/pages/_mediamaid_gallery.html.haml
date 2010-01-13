@@ -30,6 +30,5 @@
                               %img{:src=>"/images/admin/gallery_#{@a[1]}.jpg", :alt=>m.mediamaid_file_name}
                             - else 
                               %img{:src=>m.mediamaid.url(:thumb),:alt=>m.mediamaid_file_name}
-        -else
-          %div.mediamaid_label 
-            %a{:href=>"#", :onClick=>("insertAtCaret('#{m.mediamaid.url(:original)}', '#{m.mediamaid_content_type}'); return false;")} m.mediamaid_file_name 
+        %div.mediamaid_label 
+          %a{:href=>"#", :onClick=>("insertAtCaret('#{m.mediamaid.url(:original)}', 'url'); return false;")}= m.mediamaid_file_name 
