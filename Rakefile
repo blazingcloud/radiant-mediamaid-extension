@@ -1,9 +1,7 @@
-# I think this is the one that should be moved to the extension Rakefile template
-
-# In rails 1.2, plugins aren't available in the path until they're loaded.
-# Check to see if the rspec plugin is installed first and require
-# it if it is.  If not, use the gem version.
-
+ # Radiant-mediamaid-extension
+ # @copyright (c) 2010 Blazing CLoud (http://www.blazingcloud.net)
+ # @license MIT License
+ #
 # Determine where the RSpec plugin is by loading the boot
 unless defined? RADIANT_ROOT
   ENV["RAILS_ENV"] = "test"

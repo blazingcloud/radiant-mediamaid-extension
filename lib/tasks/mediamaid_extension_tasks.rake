@@ -1,4 +1,8 @@
-namespace :radiant do
+ # Radiant-carousel-extension
+ # @copyright (c) 2010 Blazing CLoud (http://www.blazingcloud.net)
+ # @license MIT License
+ #
+ namespace :radiant do
   namespace :extensions do
     namespace :mediamaid do
       

@@ -1,3 +1,7 @@
+ # Radiant-mediamaid-extension
+ # @copyright (c) 2010 Blazing CLoud (http://www.blazingcloud.net)
+ # @license MIT License
+ #
 class Admin::MediamaidController < ApplicationController
   
   def index

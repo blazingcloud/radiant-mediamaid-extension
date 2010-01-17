@@ -1,3 +1,7 @@
+ # Radiant-mediamaid-extension
+ # @copyright (c) 2010 Blazing CLoud (http://www.blazingcloud.net)
+ # @license MIT License
+
 require File.dirname(__FILE__) + "/../spec_helper"
 
 # Another requirement is to make sure whiny = true, to do this the content-types tests 

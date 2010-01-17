@@ -20,13 +20,29 @@
   -if @mediamaid.mediamaid_content_type =~ /image/
     %tr
       %td{:colspan=>"2"}
-        %h2 Image Sizes
+        %h2 
+          Image Sizes (
+          %a{:href=>"#original"} Original
+          %a{:href=>"#thumbnail"} Thumbnail
+          %a{:href=>"#large"} Large
+          %a{:href=>"#medium"} Medium
+          )
     %tr
-      %td{:style=>("text-align:top;vertical-align:top;")} Thumbnail:
+      %td{:style=>("text-align:top;vertical-align:top;")} 
+        %a{:name=>"thumbnail"} Thumbnail
       %td= image_tag @mediamaid.mediamaid.url(:thumb)
     %tr
-      %td{:style=>("text-align:top;vertical-align:top;")} Original
+      %td{:style=>("text-align:top;vertical-align:top;")} 
+        %a{:name=>"original" } Original
       %td= image_tag @mediamaid.mediamaid.url(:original)
+    %tr
+      %td{:style=>("text-align:top;vertical-align:top;")} 
+        %a{:name=>"large"} Large
+      %td= image_tag @mediamaid.mediamaid.url(:large)
+    %tr
+      %td{:style=>("text-align:top;vertical-align:top;")} 
+        %a{:name=>"medium"} Medium
+      %td= image_tag @mediamaid.mediamaid.url(:medium)
   %tr
     %td{:style=>("background-color:#A0A0A0"), :colspan=>"2"}
   %tr

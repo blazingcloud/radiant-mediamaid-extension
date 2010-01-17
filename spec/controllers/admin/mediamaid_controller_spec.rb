@@ -1,3 +1,7 @@
+ # Radiant-mediamaid-extension
+ # @copyright (c) 2010 Blazing CLoud (http://www.blazingcloud.net)
+ # @license MIT License
+ # 
 require File.dirname(__FILE__) + "/../../spec_helper"
 
 describe Admin::MediamaidController do
@@ -14,7 +18,7 @@ describe Admin::MediamaidController do
   end
   
   describe "index" do
-    it "should show all mediamaid items on index" do
+    it "should show all mediamaid items" do
       get :index
       response.should be_success
     end

@@ -1,4 +1,8 @@
-class MediamaidExtension < Radiant::Extension
+ # Radiant-mediamaid-extension
+ # @copyright (c) 2010 Blazing CLoud (http://www.blazingcloud.net)
+ # @license MIT License
+ #
+ class MediamaidExtension < Radiant::Extension
   version "1.0"
   description "MediaMaid is an asset management tool for Radiant CMS"
   url "http://blazing-cloud.com"

@@ -1,3 +1,7 @@
+ # Radiant-mediamaid-extension
+ # @copyright (c) 2010 Blazing CLoud (http://www.blazingcloud.net)
+ # @license MIT License
+ #
 class Mediamaid < ActiveRecord::Base 
   require "paperclip"
 
@@ -6,10 +10,10 @@ class Mediamaid < ActiveRecord::Base
   medium_size = Radiant::Config['mediamaid.medium'] + ">"
   large_size  = Radiant::Config['mediamaid.large'] + ">"
     has_attached_file :mediamaid,   :styles => {
-           :thumb => thumb_size# ,
-           #            :small => small_size,
-           #            :thumb => medium_size,
-           #            :thumb => large_size
+           :thumb => thumb_size,
+           :small => small_size,
+           :medium => medium_size,
+          :large => large_size
      },   
       :whiny => false,
       :url  => "/assets/:id/:style/:basename.:extension", 
