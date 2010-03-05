@@ -1,0 +1,8 @@
+%h3 Add media
+= error_messages_for "mediamaid"
+-form_for :mediamaid, :url  => { :action  => "create" }, :html  => { :multipart  => true } do |f|
+  %p 
+    Browse your computer: 
+    = f.file_field :mediamaid
+    &nbsp;&nbsp;
+    = f.submit name="Upload"
