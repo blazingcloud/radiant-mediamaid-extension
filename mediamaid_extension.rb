@@ -16,7 +16,10 @@
   def activate
 
     admin.page.edit.add(:form, "mediamaid_gallery", :before=> "edit_page_parts")
-    admin.tabs.add "Media", "/admin/mediamaid", :after => "Layouts", :visibility => [:all]
+    tab "Content" do
+      add_item("Media", "/admin/mediamaid")
+    end
+#    admin.tabs.add "Media", "/admin/mediamaid", :after => "Layouts", :visibility => [:all]
 
 # default settings for configuration of medimaid image sizes, to change go to Settings in Admin UI
     Radiant::Config['mediamaid.thumb'] ||= "100x100"
