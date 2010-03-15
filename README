@@ -6,11 +6,13 @@ MediaMaid is an easy-to-use asset manager extension for Radiant CMS.
 
 - Resizes images to thumbnails on upload
 - Configure thumbnail, and other sizes through admin settings
-- Super easy 1-click insertion of image, video, and audio files, with HTML mark-up into blog post
+- 1-click insertion of image, video, and audio files, with HTML mark-up into blog post
 - Users can view image gallery without leaving Edit Page
 - Batch import rake task brings files from local directory into asset directory and resizes
 - You can change the HTML that inserts with the 1-click option
 
+== Batch Importing
+Special rake task batch-imports an entire directory of images and/or media. It's: "batch_import" extension rake task. (rake radiant:extensions:mediamaid:batch_import, in your Radiant root directory)
  
 == Getting Started
    
@@ -26,7 +28,7 @@ DYLD_LIBRARY_PATH=[your installation directory]/lib
 
 gem install paperclip
 
-3. If you don't have it installed, install Settings extension. In your Radiant root directory, enter:
+3. (skip to step 5 for 0.9/Edge) If you don't have it installed, install Settings extension. In your Radiant root directory, enter:
 
 git clone git://github.com/Squeegy/radiant-settings.git settings
 
@@ -35,9 +37,9 @@ git clone git://github.com/Squeegy/radiant-settings.git settings
 rake radiant:extensions:settings:migrate
 rake radiant:extensions:settings:update
 
-5. In your vendor/extensions directory, clone the code from github:
-
-git clone git@github.com:blazingcloud/radiant-mediamaid-extension.git mediamaid
+5. In your root Radiant directory run:
+script/extension install mediamaid 
+(for Edge/0.9, checkout branch 0.9 on http://github.com/blazingcloud/mediamaid)
 
 6. Run Radiant extension command-line functions:
 rake radiant:extensions:mediamaid:migrate

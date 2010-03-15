@@ -31,10 +31,9 @@
       desc "Uploads batches of files from a location local to web server"
       task :batch_import => :environment do
         require File.dirname(__FILE__) + "/../../app/models/mediamaid"
-
-        print "All the files in the given directory will be imported"
-        print "Directory path should be specified like: /usr/name/myfiles/"
-        print "Please enter the directory:"
+        $stdout.sync = TRUE
+        
+        $stdout.puts "Please specify the directory, in this format: '/usr/name/myfiles/'\n"
 
         dirpath = $stdin.gets.chomp
 
@@ -48,7 +47,7 @@
            end
         end
 
-        print "Directory import complete: #{dirpath}\n"
+        $stdout.print "Directory import complete: #{dirpath}\n. Go to your Radiant admin, Media tab to view newly imported images."
 
       end
     end
