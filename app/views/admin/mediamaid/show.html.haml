@@ -1,4 +1,4 @@
-%h3= @mediamaid.mediamaid_file_name, " Information"
+%h3= "#{@mediamaid.mediamaid_file_name} Information"
 %table{:cellpadding=>5}
   %tr
     %td Content Type:
@@ -6,16 +6,10 @@
   %tr
     %td  Size: 
     %td{:style=>("font-weight:bold;")}
-      -size = @mediamaid.mediamaid_file_size 
-      -if (size> 1000000)
-        = size/1000000," MB"
-        elsif ( size > 1000 )
-        =size/1000," KB"
-      -else 
-        =size," bytes"
+      = @mediamaid.size_format
   %tr
     %td Upload Date:
-    %td{:style=>("font-weight:bold;")}= @mediamaid.created_at.mon,"/",@mediamaid.created_at.day,"/", @mediamaid.created_at.year
+    %td{:style=>("font-weight:bold;")}= @mediamaid.created_at.strftime("%Y/%m/%d")
  
   -if @mediamaid.mediamaid_content_type =~ /image/
     %tr
@@ -46,4 +40,4 @@
   %tr
     %td{:style=>("background-color:#A0A0A0"), :colspan=>"2"}
   %tr
-    %td{:colspan=>2}= link_to image_tag('/images/admin/remove.png'), remove_admin_mediamaid_url(@mediamaid),:confirm=>"Are you sure?"
+    %td{:colspan=>2}= link_to image_tag('/images/admin/minus.png'), remove_admin_mediamaid_url(@mediamaid),:confirm=>"Are you sure?"

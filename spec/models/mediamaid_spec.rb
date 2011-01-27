@@ -51,4 +51,11 @@ describe Mediamaid do
     @mediamaid.mediamaid_content_type = "audio/mp3"
     @mediamaid.should_not be_valid
   end
+
+  context "when file doesn't exists" do
+    before do
+
+    end
+  end
+
 end

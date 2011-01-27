@@ -13,10 +13,10 @@
     %table{:cellpadding=>5, :border=>0, :width=>"100%"}
       - @mediamaids.each do |m|
         %tr
-          %td=	link_to image_tag(m.mediamaid.url(:thumb)), :action => "show", :id => m if (m.mediamaid_content_type =~ /image/) 
+          %td=	link_to image_tag(m.mediamaid.url(:thumb)), :action => "show", :id => m if (m.mediamaid_content_type =~ /image/)
           %td
             %strong
             = link_to m.mediamaid_file_name, :action => "show", :id  => m
             = link_to m.mediamaid_content_type, :action => "show", :id  => m 
-          %td= m.created_at.mon, "/", m.created_at.day, "/", m.created_at.year
-          %td= link_to image_tag('/images/admin/remove.png'), remove_admin_mediamaid_url(m),:confirm=>"Are you sure?"
+          %td= m.created_at.strftime("%Y/%m/%d")
+          %td= link_to image_tag('/images/admin/minus.png'), remove_admin_mediamaid_url(m),:confirm=>"Are you sure?"

@@ -1,0 +1,7 @@
+= javascript_include_tag 'jquery-1.4.4.min.js'
+= javascript_include_tag 'admin/get_gallery.js'
+
+%div#mediamaid_partial
+  = link_to_function image_tag('admin/media.png'), :id => 'link_gallery'
+  %div#gallery{:style => 'display:none'}
+

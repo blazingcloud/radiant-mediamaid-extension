@@ -1,0 +1,26 @@
+%br
+  Click thumbnail to insert into post
+
+-@mediamaids = Mediamaid.all(:order=>"created_at DESC")
+%div#mediamaid_gallery
+  -@mediamaids.each do |m|
+    %div.mediamaid_file
+      -if (m.file_exists? && m.mediamaid.url(:thumb))
+        %div.div_link
+          %div.mediamaid_thumbnail_wrapper
+            %div.shadow5
+              %div.shadow4
+                %div.shadow3
+                  %div.shadow2
+                    %div.shadow1
+                      %div.shadow_border
+                        - content_class = m.mediamaid_content_type
+                        - if content_class.match(/image/)
+                          = image_tag m.mediamaid.url(:thumb), :alt => m.mediamaid_file_name, :class => 'mediamaid_img image'
+                        - else
+                          -extension = m.mediamaid_content_type.split('/')[1]
+                          =image_tag "/images/admin/gallery_#{extension}.jpg",:alt => m.mediamaid.url(:thumb), :class => 'mediamaid_img'
+                        %div.mediamaid_label
+          %a{:href=>"#"}= m.mediamaid_file_name
+= javascript_include_tag 'admin/mediamaid.js'
+
