@@ -14,13 +14,8 @@
                   %div.shadow2
                     %div.shadow1
                       %div.shadow_border
-                        - content_class = m.mediamaid_content_type
-                        - if content_class.match(/image/)
-                          = image_tag m.mediamaid.url(:thumb), :alt => m.mediamaid_file_name, :class => 'mediamaid_img image'
-                        - else
-                          -extension = m.mediamaid_content_type.split('/')[1]
-                          =image_tag "/images/admin/gallery_#{extension}.jpg",:alt => m.mediamaid.url(:thumb), :class => 'mediamaid_img'
+                        =get_media(m)
                         %div.mediamaid_label
-          %a{:href=>"#"}= m.mediamaid_file_name
+          =get_media(m,false)
 = javascript_include_tag 'admin/mediamaid.js'
 

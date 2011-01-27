@@ -84,7 +84,8 @@ describe Admin::MediamaidController do
     it 'should show render gallery info' do
       get :gallery
       assigns[:mediamaids].should_not be_nil
-      response.should render_template 'admin/pages/gallery_info'
+      response.should be_success
+      response.should have_tag("div#mediamaid_gallery")
     end
   end
 
